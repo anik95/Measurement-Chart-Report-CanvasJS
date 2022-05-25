@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .canvasjsChart {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        /* transform: rotate(90deg); */
+        border: 2px solid black;
+      }
+      #measurement-chart-container {
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-start;
+        flex-direction: column;
+        page-break-after: always;
+      }
+      .chart {
+        overflow: hidden;
+        max-height: 132px; /*92px*/
+        box-sizing: border-box;
+        width: 100%;
+      }
+      .row {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        border-top: 1px solid #000;
+        min-height: 133px; /* 1px extra for border  - 93px*/
+        max-height: 133px; /*93px*/
+        box-sizing: border-box;
+        overflow: hidden;
+        background-color: transparent;
+      }
+      .row:nth-of-type(odd) {
+        background-color: rgba(220, 220, 220, 0.5);
+      }
+      .row:nth-of-type(odd) .canvasjs-chart-panel {
+        box-shadow: 4px 0px 0 rgba(220, 220, 220, 1);
+      }
+      .row:nth-of-type(odd) .chartColumnName {
+        box-shadow: 2px 0px 0 rgb(220, 220, 220, 1);
+        position: relative;
+        z-index: 1;
+      }
+      .row:first-of-type {
+        border-top: 0;
+        margin: 0;
+      }
+      .row:last-of-type {
+        border-bottom: 0;
+      }
+      .chartColumnName {
+        height: 132px; /*92px*/
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 20px; /*20px*/
+        border-right: 1px solid #000;
+        padding-right: 1px;
+      }
+      .chartColumnName p {
+        min-width: 132px; /*92px*/
+        max-width: 132px; /*92px*/
+        font-size: 9px; /*9*/
+        margin: 0;
+        transform: rotate(270deg);
+        text-align: center;
+      }
+      .canvasjs-chart-panel {
+        top: 0 !important;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="canvasjsChart">
+      <!-- <div id="chartContainer"> -->
+      <div id="measurement-chart-container">
+        <!-- <div class="row">
+          <div class="chartColumnName"><p></p></div>
+          <div class="chart" id="chart-1"></div>
+        </div>
+        <div class="row">
+          <div class="chartColumnName"><p></p></div>
+          <div class="chart" id="chart-2"></div>
+        </div>
+        <div class="row">
+          <div class="chartColumnName"><p></p></div>
+          <div class="chart" id="chart-3"></div>
+        </div>
+        <div class="row">
+          <div class="chartColumnName"><p></p></div>
+          <div class="chart" id="chart-4"></div>
+        </div>
+        <div class="row">
+          <div class="chartColumnName"><p></p></div>
+          <div class="chart" id="chart-5"></div>
+        </div>
+        <div class="row">
+          <div class="chartColumnName"><p></p></div>
+          <div class="chart" id="chart-6"></div>
+        </div>
+        <div class="row">
+          <div class="chartColumnName"><p></p></div>
+          <div class="chart" id="chart-7"></div>
+        </div>
+        <div class="row">
+          <div class="chartColumnName"><p>Localisation Info [m]</p></div>
+          <div class="chart" id="chart-8"></div>
+        </div> -->
+      </div>
+    </div>
+    <script src="canvasjs.stock.min.js"></script>
+    <!-- <script src="html2canvas.min.js"></script> -->
+    <script src="index.js"></script>
+  </body>
+</html>
