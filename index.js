@@ -9,55 +9,32 @@ const dataString = JSON.stringify({
   Culture: "en",
   NumberOfChartPoints: 6000,
   LocalizationScale: 2000,
-  SignalScale: 1,
   TwistBaseLength: 1,
   ChartParameters: [
-    "GaugeDefect",
-    "GaugeChange1",
-    "GaugeChange2",
-    "GaugeChange3",
-    "Cant",
-    "TwistBase1",
-    "TwistBase2",
-    "TwistBase3",
-    "AlignmentD1Left",
-    "AlignmentD1Right",
-    "AlignmentD2Left",
-    "AlignmentD2Right",
-    "LongitudinalLevelD1Left",
-    "LongitudinalLevelD1Right",
-    "LongitudinalLevelD2Left",
-    "LongitudinalLevelD2Right",
-    "VersineHorizontalLeft",
-    "VersineHorizontalRight",
-    "VersineVerticalLeft",
-    "VersineVerticalRight",
+    { parameterName: "GaugeDefect", scale: 1 },
+    { parameterName: "GaugeChange1", scale: 1 },
+    { parameterName: "GaugeChange2", scale: 1 },
+    { parameterName: "GaugeChange3", scale: 1 },
+    { parameterName: "Cant", scale: 1 },
+    { parameterName: "TwistBase1", scale: 1 },
+    { parameterName: "TwistBase2", scale: 1 },
+    { parameterName: "TwistBase3", scale: 1 },
+    { parameterName: "AlignmentD1Left", scale: 1 },
+    { parameterName: "AlignmentD1Right", scale: 1 },
+    { parameterName: "AlignmentD2Left", scale: 1 },
+    { parameterName: "AlignmentD2Right", scale: 1 },
+    { parameterName: "LongitudinalLevelD1Left", scale: 1 },
+    { parameterName: "LongitudinalLevelD1Right", scale: 1 },
+    { parameterName: "LongitudinalLevelD2Left", scale: 1 },
+    { parameterName: "LongitudinalLevelD2Right", scale: 1 },
+    { parameterName: "VersineHorizontalLeft", scale: 1 },
+    { parameterName: "VersineHorizontalRight", scale: 1 },
+    { parameterName: "VersineVerticalLeft", scale: 1 },
+    { parameterName: "VersineVerticalRight", scale: 1 },
   ],
-  ParametersScale: {
-    GaugeDefectScale: 1,
-    GaugeChange1Scale: 1,
-    GaugeChange2Scale: 1,
-    GaugeChange3Scale: 1,
-    CantScale: 1,
-    TwistBase1Scale: 1,
-    TwistBase2Scale: 1,
-    TwistBase3Scale: 1,
-    AlignmentD1LeftScale: 1,
-    AlignmentD1RightScale: 1,
-    AlignmentD2LeftScale: 1,
-    AlignmentD2RightScale: 1,
-    LongitudinalLevelD1LeftScale: 1,
-    LongitudinalLevelD1RightScale: 1,
-    LongitudinalLevelD2LeftScale: 1,
-    LongitudinalLevelD2RightScale: 1,
-    VersineHorizontalLeftScale: 1,
-    VersineHorizontalRightScale: 1,
-    VersineVerticalLeftScale: 1,
-    VersineVerticalRightScale: 1,
-  },
   TotalParameterCount: 20,
   ParameterPerPage: 5,
-  ParameterBlockIndex: 0,
+  ParameterBlockIndex: 2,
   ChartIndex: 1,
   PageWidth: 195.0,
   Customer: {
@@ -117330,201 +117307,113 @@ const chartReport = (dataString) => {
   const {
     VisualTrackDatas,
     Events: events,
-    StationingStartDisplayValue: StationingStart,
-    StationingEndDisplayValue: StationingEnd,
+    StationingStart,
+    StationingEnd,
     PageWidth,
-    DefectScale = 1,
     ChartIndex,
-    TwistBaseLength,
     ModifiedSpeedElements,
-    ParametersScale,
     ParameterBlockIndex,
     ParameterPerPage,
     ChartParameters,
+    LocalizationScale,
+    BaseLengths: { GaugeChangeBaseLengths, TwistBaseLengths },
   } = parsedData;
-
+  const widthRatio = LocalizationScale / 100;
   const chartTypes = [];
   const charts = [
     {
       id: "VersineVerticalRight",
-      shortName: "VVR",
-      shouldShow: true,
-      scaleName: "VersineVerticalRightScale",
-      limitType: "VersineLimits",
       columnName: "Versine Vertical Right",
     },
     {
       id: "VersineVerticalLeft",
-      shortName: "VVL",
-      shouldShow: true,
-      scaleName: "VersineVerticalLeftScale",
-      limitType: "VersineLimits",
       columnName: "Versine Vertical Left",
     },
     {
       id: "VersineHorizontalRight",
-      shortName: "VHR",
-      shouldShow: true,
-      scaleName: "VersineHorizontalRightScale",
-      limitType: "VersineLimits",
       columnName: "Versine Horizontal Right",
     },
     {
       id: "VersineHorizontalLeft",
-      shortName: "VHL",
-      shouldShow: true,
-      scaleName: "VersineHorizontalLeftScale",
-      limitType: "VersineLimits",
       columnName: "Versine Horizontal Left",
     },
     {
       id: "LongitudinalLevelD2Right",
-      shortName: "LLD2R",
-      shouldShow: true,
-      scaleName: "LongitudinalLevelD2RightScale",
-      limitType: "D2Limits",
-      columnName: "Longitudinal Level Right",
+      columnName: "Longitudinal Level D2 Right",
     },
     {
       id: "LongitudinalLevelD2Left",
-      shortName: "LLD2L",
-      shouldShow: true,
-      scaleName: "LongitudinalLevelD2LeftScale",
-      limitType: "D2Limits",
-      columnName: "Longitudinal Level Left",
+      columnName: "Longitudinal Level D2 Left",
     },
     {
       id: "LongitudinalLevelD1Right",
-      shortName: "LLD1R",
-      shouldShow: true,
-      scaleName: "LongitudinalLevelD1RightScale",
-      limitType: "D1Limits",
-      columnName: "Longitudinal Level Right",
+      columnName: "Longitudinal Level D1 Right",
     },
     {
       id: "LongitudinalLevelD1Left",
-      shortName: "LLD1L",
-      shouldShow: false,
-      scaleName: "LongitudinalLevelD1LeftScale",
-      limitType: "D1Limits",
-      columnName: "Longitudinal Level Left",
+      columnName: "Longitudinal Level D1 Left",
     },
     {
       id: "AlignmentD2Right",
-      shortName: "AD2R",
-      shouldShow: false,
-      scaleName: "AlignmentD2RightScale",
-      limitType: "D2Limits",
-      columnName: "Alignment Right",
+      columnName: "Alignment D2 Right",
     },
     {
       id: "AlignmentD2Left",
-      shortName: "AD2L",
-      shouldShow: false,
-      scaleName: "AlignmentD2LeftScale",
-      limitType: "D2Limits",
-      columnName: "Alignment Left",
+      columnName: "Alignment D2 Left",
     },
     {
       id: "AlignmentD1Right",
-      shortName: "AD1R",
-      shouldShow: false,
-      scaleName: "AlignmentD1RightScale",
-      limitType: "D1Limits",
-      columnName: "Alignment Left",
+      columnName: "Alignment D1 Left",
     },
     {
       id: "AlignmentD1Left",
-      shortName: "AD1L",
-      shouldShow: false,
-      scaleName: "AlignmentD1LeftScale",
-      limitType: "D1Limits",
-      columnName: "Alignment Right",
+      columnName: "Alignment D1 Right",
     },
-    {
-      id: "TwistBase1",
-      shortName: "Twist",
-      shouldShow: true,
-      scaleName: "TwistBase1Scale",
-      limitType: "",
-      columnName: `Twist ${TwistBaseLength}m`,
-    },
-    {
-      id: "CantDefect",
-      shortName: "CantDefect",
-      shouldShow: true,
-      scaleName: "CantScale",
-      limitType: "",
-      columnName: "Cant Defect",
-    },
+    // {
+    //   id: "CantDefect",
+    //   columnName: "Cant Defect",
+    // },
     {
       id: "Cant",
-      shortName: "Cant",
-      shouldShow: false,
-      scaleName: "CantScale",
-      limitType: "",
       columnName: "Cant",
     },
     {
       id: "GaugeDefect",
-      shortName: "Gauge",
-      shouldShow: true,
-      scaleName: "GaugeDefectScale",
-      limitType: "",
-      columnName: "Gauge Defect",
+      columnName: "Gauge",
     },
-    {
-      id: "GaugeChange1",
-      shortName: "Gauge1",
-      shouldShow: true,
-      scaleName: "GaugeChange1Scale",
-      limitType: "",
-      columnName: "Gauge  1",
-    },
-    {
-      id: "GaugeChange2",
-      shortName: "Gauge2",
-      shouldShow: true,
-      scaleName: "GaugeChange2Scale",
-      limitType: "",
-      columnName: "Gauge Defect 2",
-    },
-    {
-      id: "GaugeChange3",
-      shortName: "Gauge3",
-      shouldShow: true,
-      scaleName: "GaugeChange3Scale",
-      limitType: "",
-      columnName: "Gauge Defect 3",
-    },
-    {
-      id: "TwistBase2",
-      shortName: "TwistBase2",
-      shouldShow: true,
-      scaleName: "TwistBase2Scale",
-      limitType: "",
-      columnName: "TwistBase2",
-    },
-    {
-      id: "TwistBase3",
-      shortName: "TwistBase2",
-      shouldShow: true,
-      scaleName: "TwistBase3Scale",
-      limitType: "",
-      columnName: "TwistBase2",
-    },
+    ...(GaugeChangeBaseLengths.length
+      ? GaugeChangeBaseLengths.map((value) => {
+          return {
+            id: `GaugeChange${value}m`,
+            columnName: `Gauge Change ${value}m`,
+          };
+        })
+      : []),
+    ...(TwistBaseLengths.length
+      ? TwistBaseLengths.map((value) => {
+          return {
+            id: `TwistBase${value}m`,
+            columnName: `Twist Base ${value}m`,
+          };
+        })
+      : []),
   ];
-  const startingIndex = ParameterBlockIndex * ParameterPerPage;
-  const endingIndex = (ParameterBlockIndex + 1) * ParameterPerPage;
-  for (let i = startingIndex; i < endingIndex; i++) {
-    const chart = charts.find((chart) => chart.id === ChartParameters[i]);
-    console.log("chart: ", i, ChartParameters[i], chart);
-    chartTypes.push(chart);
+  const endingIndex = ParameterBlockIndex * ParameterPerPage;
+  const startingIndex = (ParameterBlockIndex + 1) * ParameterPerPage;
+  for (let i = startingIndex - 1; i >= endingIndex; i--) {
+    let chart = charts.find(
+      (chart) => chart.id === ChartParameters[i].parameterName
+    );
+    if (chart) {
+      chart = {
+        ...chart,
+        scale: ChartParameters[i].scale,
+      };
+      chartTypes.push(chart);
+    }
   }
   chartTypes.push({
     id: "Localizations",
-    shortName: "Localizations",
-    shouldShow: true,
     columnName: "Localization Info",
   });
 
@@ -117534,16 +117423,10 @@ const chartReport = (dataString) => {
     .querySelector("#measurement-chart-container")
     .appendChild(chartContainerNode);
 
-  const dataPointGenerator = (values, key = "") => {
-    // if (!limits.length) {
-    //   return [values, [], null, null];
-    // }
+  const dataPointGenerator = (values) => {
     const lineChartDataPoints = [];
-    // const areaChartData = [];
     let minY = values?.[0]?.y;
     let maxY = values?.[0]?.y;
-    // console.log("values: ", values);
-    // console.log(minY, maxY);
     values?.forEach((value) => {
       if (
         (value.x == null && Number.isNaN(value.x)) ||
@@ -117551,71 +117434,6 @@ const chartReport = (dataString) => {
       ) {
         return;
       }
-      // let currentChartThreshold = limits[currentThresholdIndex];
-      // if (value.x > currentChartThreshold.StationingEnd) {
-      //   if (currentThresholdIndex + 1 < limits.length) {
-      //     currentThresholdIndex += 1;
-      //     currentChartThreshold = limits[currentThresholdIndex];
-      //     minY = Math.min(
-      //       minY,
-      //       currentChartThreshold.LimitsBySeverity[2].Lower
-      //     );
-      //     maxY = Math.max(
-      //       maxY,
-      //       currentChartThreshold.LimitsBySeverity[2].Upper
-      //     );
-      //   } else {
-      //     lineChartDataPoints.push({ ...value });
-      //     addAreaCharDataPoint(value, areaChartData, "transparent");
-      //     if (minY > value.y) {
-      //       minY = value.y;
-      //     }
-      //     if (maxY < value.y) {
-      //       maxY = value.y;
-      //     }
-      //     return;
-      //   }
-      // }
-      // if (value.y > currentChartThreshold.LimitsBySeverity[2].Upper) {
-      //   lineChartDataPoints.push({ ...value });
-      //   // addAreaCharDataPoint(value, areaChartData, "#E40D3B", "IAL");
-      // } else if (
-      //   value.y > currentChartThreshold.LimitsBySeverity[1].Upper &&
-      //   value.y < currentChartThreshold.LimitsBySeverity[2].Upper
-      // ) {
-      //   lineChartDataPoints.push({ ...value });
-      //   // addAreaCharDataPoint(value, areaChartData, "#FF9B31", "IL");
-      // } else if (
-      //   value.y > currentChartThreshold.LimitsBySeverity[0].Upper &&
-      //   value.y < currentChartThreshold.LimitsBySeverity[1].Upper
-      // ) {
-      //   lineChartDataPoints.push({ ...value });
-      //   // addAreaCharDataPoint(value, areaChartData, "#FFEF35", "AL");
-      // } else if (
-      //   value.y < currentChartThreshold.LimitsBySeverity[0].Upper &&
-      //   value.y > currentChartThreshold.LimitsBySeverity[0].Lower
-      // ) {
-      //   lineChartDataPoints.push({ ...value });
-      //   // addAreaCharDataPoint(value, areaChartData, "transparent");
-      // } else if (
-      //   value.y < currentChartThreshold.LimitsBySeverity[0].Lower &&
-      //   value.y > currentChartThreshold.LimitsBySeverity[1].Lower
-      // ) {
-      //   lineChartDataPoints.push({ ...value });
-      //   // addAreaCharDataPoint(value, areaChartData, "#FFEF35", "AL");
-      // } else if (
-      //   value.y < currentChartThreshold.LimitsBySeverity[1].Lower &&
-      //   value.y > currentChartThreshold.LimitsBySeverity[2].Lower
-      // ) {
-      //   lineChartDataPoints.push({ ...value });
-      //   // addAreaCharDataPoint(value, areaChartData, "#FF9B31", "IL");
-      // } else if (value.y < currentChartThreshold.LimitsBySeverity[2].Lower) {
-      //   lineChartDataPoints.push({ ...value });
-      //   // addAreaCharDataPoint(value, areaChartData, "#E40D3B", "IAL");
-      // } else {
-      //   lineChartDataPoints.push({ ...value });
-      //   // addAreaCharDataPoint(value, areaChartData, "transparent");
-      // }
       lineChartDataPoints.push({ ...value });
       if (minY > value.y) {
         minY = value.y;
@@ -117626,82 +117444,6 @@ const chartReport = (dataString) => {
     });
     return [lineChartDataPoints, minY, maxY];
   };
-
-  // const getLineColor = (index) => {
-  //   switch (index) {
-  //     case 0:
-  //       return "#FFEF35";
-  //     case 1:
-  //       return "#FF9B31";
-  //     case 2:
-  //       return "#E40D3B";
-  //     default:
-  //       return "#FFEF35";
-  //   }
-  // };
-
-  // const configureThresholdLimits = (currentChartType) => {
-  //   if (currentChartType.id === "Localizations") return [];
-  //   let limits = [];
-  //   if (!currentChartType?.limitType) {
-  //     limits = chartThresholds[currentChartType.limitName].Limits;
-  //   } else {
-  //     limits =
-  //       chartThresholds[currentChartType.limitName][currentChartType.limitType];
-  //   }
-  //   return limits;
-  // };
-
-  // const generateThresholdStriplines = (limits) => {
-  //   const thresholdDataSet = [];
-  //   const addToThresholdData = (start, end, yCoordinate, lineColor) => {
-  //     const commonProps = {
-  //       y: yCoordinate,
-  //       lineColor,
-  //     };
-  //     thresholdDataSet.push({
-  //       type: "line",
-  //       axisXType: "secondary",
-  //       markerSize: 0,
-  //       lineDashType: "dash",
-  //       lineThickness: 1,
-  //       dataPoints: [
-  //         {
-  //           x: start,
-  //           ...commonProps,
-  //         },
-  //         {
-  //           x: end,
-  //           ...commonProps,
-  //         },
-  //       ],
-  //     });
-  //   };
-  //   for (const limit of limits) {
-  //     if (limit.StationingStart > StationingEnd) break;
-  //     if (
-  //       limit.StationingStart <= StationingEnd &&
-  //       limit.StationingEnd > StationingStart
-  //     ) {
-  //       limit.LimitsBySeverity.forEach((element, index) => {
-  //         const lineColor = getLineColor(index);
-  //         addToThresholdData(
-  //           limit.StationingStart,
-  //           limit.StationingEnd,
-  //           element.Lower,
-  //           lineColor
-  //         );
-  //         addToThresholdData(
-  //           limit.StationingStart,
-  //           limit.StationingEnd,
-  //           element.Upper,
-  //           lineColor
-  //         );
-  //       });
-  //     }
-  //   }
-  //   return thresholdDataSet;
-  // };
 
   const generateEventStriplines = (chartListLength) => {
     const eventStripLines = [];
@@ -117803,20 +117545,8 @@ const chartReport = (dataString) => {
     node.innerHTML = `${columnName} <br> 1:${scale.toFixed(0)} [mm]`;
   };
 
-  // const generateYAxisLabels = (limits) => {
-  //   let labels = [];
-  //   limits?.[0]?.LimitsBySeverity.forEach((limit) => {
-  //     labels = [...labels, limit.Upper, limit.Lower];
-  //   });
-  //   return labels;
-  // };
-
   const newChartData = {};
-
-  // updateChartTypes("HorizontalAlignment");
-  // updateChartTypes("VerticalAlignment");
-
-  let chartData = []; //change to {}
+  let chartData = {}; //change to {}
   if (VisualTrackDatas?.length) {
     VisualTrackDatas.forEach((row) => {
       row.ParameterValues.forEach((cell) => {
@@ -117834,38 +117564,12 @@ const chartReport = (dataString) => {
       }),
       {}
     );
-    console.log("chartData: ", chartData);
     const withLocalization = { ...chartData, Localizations: [] };
     chartData = withLocalization;
-  } else {
-    chartData = {
-      VersineVerticalRight: [],
-      VersineVerticalLeft: [],
-      VersineHorizontalRight: [],
-      VersineHorizontalLeft: [],
-      LongitudinalLevelD2Right: [],
-      LongitudinalLevelD2Left: [],
-      LongitudinalLevelD1Right: [],
-      LongitudinalLevelD1Left: [],
-      AlignmentD2Right: [],
-      AlignmentD2Left: [],
-      AlignmentD1Right: [],
-      AlignmentD1Left: [],
-      TwistBase1: [],
-      CantDefect: [],
-      Cant: [],
-      GaugeDeviation: [],
-      Localizations: [],
-    };
   }
   if (chartData) {
     let index = 0;
     const chartList = [];
-    // const speedZones = chartThresholds.Gauge.Limits.map((limit) => ({
-    //   value: limit.StationingEnd,
-    //   MinSpeed: limit.MinSpeed,
-    //   MaxSpeed: limit.MaxSpeed,
-    // }));
     const speedZones = ModifiedSpeedElements.map((speedElement) => ({
       value: speedElement.StationingEnd,
       MinSpeed: speedElement.MinSpeedLimit,
@@ -117874,23 +117578,19 @@ const chartReport = (dataString) => {
     for (const [key, value] of Object.entries(chartData)) {
       const param = chartTypes.find((paramItem) => paramItem.id === key);
       if (param) {
-        // const limits = configureThresholdLimits(param);
-        // const yAxisLabels = generateYAxisLabels(limits);
         const [lineChartDataPoints, minY, maxY] = dataPointGenerator(value);
-
-        // let thresholdDataSet = [];
-        // thresholdDataSet = generateThresholdStriplines(limits);
         const eventStripLines = generateEventStriplines(chartList.length);
         const speedZoneStripLines = generateSpeedZoneStriplines(
           speedZones,
           chartList.length
         );
-        let height = (Math.abs(maxY - minY) / DefectScale) * 3.7795275591 + 8;
+        let height = (Math.abs(maxY - minY) / param.scale) * 3.7795275591;
+        if (!height) {
+          height = 8;
+        }
         if (chartList.length === 5) {
           height = 132;
         }
-        console.log("height: ", height, " ", minY, " ", maxY);
-        // height = height * 2;
         chartList.push({
           height: height,
           backgroundColor:
@@ -117898,8 +117598,8 @@ const chartReport = (dataString) => {
               ? "rgb(220, 220, 220, 0.5)"
               : "transparent",
           axisX2: {
-            minimum: StationingStart,
-            maximum: StationingEnd + 1,
+            minimum: StationingStart - 1 * widthRatio,
+            maximum: StationingEnd + 1 * widthRatio,
             lineThickness: 0,
             gridThickness: 0,
             tickLength: 0,
@@ -117915,12 +117615,7 @@ const chartReport = (dataString) => {
               lineDashType: "solid",
               labelFormatter: () => "",
             },
-            interval:
-              Math.abs(StationingEnd - StationingStart) < 200
-                ? +Math.floor(
-                    Math.abs(StationingEnd - StationingStart) / 2
-                  ).toFixed()
-                : null,
+            interval: 5 * widthRatio,
             stripLines: [...eventStripLines, ...speedZoneStripLines],
           },
           axisY: {
@@ -117933,42 +117628,32 @@ const chartReport = (dataString) => {
             labelFormatter: () => "",
             labelAutoFit: true,
             labelFontSize: 14, //10
-            // stripLines: yAxisLabels.map((yAxisLabel, index) => ({
-            //   value: yAxisLabel,
-            //   labelAutoFit: true,
-            //   labelPlacement: "outside",
-            //   lineDashType: "solid",
-            //   color: "transparent",
-            //   label: yAxisLabel.toString(),
-            //   showOnTop: true,
-            //   labelFontColor: "#000",
-            //   labelFontFamily: "Roboto",
-            //   labelWrap: false,
-            //   labelAlign: "near",
-            //   labelBackgroundColor: "transparent",
-            //   labelFontSize: 14,
-            //   labelMaxWidth: 30,
-            // })),
+            stripLines: [
+              {
+                value: 0,
+                labelAutoFit: true,
+                lineDashType: "solid",
+                color: "#000",
+                label: "",
+              },
+            ],
           },
           axisX: {
-            minimum: StationingStart,
-            maximum: StationingEnd + 1,
+            minimum: StationingStart - 1 * widthRatio,
+            maximum: StationingEnd + 1 * widthRatio,
             tickLength: 2,
             labelAutoFit: true,
             labelWrap: false,
             labelFontWeight: "lighter",
             labelFontSize: 13, //9
-            interval:
-              Math.abs(StationingEnd - StationingStart) < 200
-                ? +Math.floor(
-                    Math.abs(StationingEnd - StationingStart) / 2
-                  ).toFixed()
-                : null,
+            interval: 5 * widthRatio,
             labelFormatter:
               chartList.length === 5
-                ? function (e) {
-                    return e.value;
-                  }
+                ? (e) =>
+                    Number(e.value) > StationingEnd &&
+                    Number(e.value) < StationingStart
+                      ? ""
+                      : e.value
                 : () => "",
             labelAngle: 270,
             stripLines: [...eventStripLines, ...speedZoneStripLines],
@@ -117982,33 +117667,8 @@ const chartReport = (dataString) => {
               dataPoints: lineChartDataPoints,
               lineColor: "black",
             },
-            // ...areaChartData,
-            // ...thresholdDataSet,
           ],
         });
-        if (param.shortName === "CantDefect") {
-          const cantData = dataPointGenerator(chartData.Cant, "Cant");
-          chartList[chartList.length - 1].data.push({
-            type: "line",
-            lineDashType: "dash",
-            axisXType: "secondary",
-            markerSize: 0,
-            dataPoints: cantData[0],
-            lineColor: "black",
-          });
-          const cantDataMax = cantData[2] + 1;
-          const cantDataMin = cantData[1] - 1;
-          const prevMax = chartList[chartList.length - 1].axisY.maximum;
-          const prevMin = chartList[chartList.length - 1].axisY.minimum;
-          const newMax = Math.max(prevMax, cantDataMax);
-          const newMin = Math.min(prevMin, cantDataMin);
-          height =
-            // ((Math.abs(newMax - newMin) / DefectScale) * 3.7795275591 + 8) * 2;
-            (Math.abs(newMax - newMin) / DefectScale) * 3.7795275591 + 8;
-          chartList[chartList.length - 1].axisY.maximum = newMax;
-          chartList[chartList.length - 1].axisY.minimum = newMin;
-          chartList[chartList.length - 1].height = height;
-        }
         const options = {
           animationEnabled: false,
           charts: [chartList[chartList.length - 1]],
@@ -118021,10 +117681,9 @@ const chartReport = (dataString) => {
         };
         const chartParameterIdAttr = `chart-${ChartIndex}${index + 1}`;
         createNewParameterNode(chartParameterIdAttr);
-        addLabels(index, param.columnName, ParametersScale[param.scaleName]);
+        addLabels(index, param.columnName, param.scale);
         document.querySelector(`#${chartParameterIdAttr}`).style.width = `${
-          // PageWidth * 2
-          PageWidth
+          PageWidth * 2
         }px`;
         document.querySelector(
           `#${chartParameterIdAttr}`
@@ -118037,8 +117696,8 @@ const chartReport = (dataString) => {
         // stockChart.charts[0].axisY[0].set(
         //   "margin",
         //   35 -
-        //     (stockChart.charts[0].axisY[0].bounds.x2 -
-        //       stockChart.charts[0].axisY[0].bounds.x1)
+        //     stockChart.charts[0].axisY[0].bounds.x2 -
+        //     stockChart.charts[0].axisY[0].bounds.x1
         // );
         index++;
       }

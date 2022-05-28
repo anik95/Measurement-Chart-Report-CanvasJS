@@ -12,7 +12,7 @@ const dataString = JSON.stringify({
     SignalScale: 1,
     TwistBaseLength: 1,
     ChartParameters: [
-      "GaugeDefect",
+      {parameterName "GaugeDefect", scale: 1},
       "GaugeChange1",
       "GaugeChange2",
       "GaugeChange3",
