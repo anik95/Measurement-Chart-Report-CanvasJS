@@ -404,11 +404,15 @@ async (dataString) => {
         index++;
       }
     }
-    document.querySelector("#canvasjsChart").style.width = `${
+    if (ParameterPerPage > paramCount) {
+      document
+        .querySelector(".chartContainer:last-of-type .row:first-of-type")
+        .classList.add("add-top-border");
+    }
+    document.querySelector(".canvasjsChart").style.width = `${
       (PageWidth + 21) * 2
     }px`;
-    var canvas = await html2canvas(document.querySelector("#canvasjsChart"));
+    var canvas = await html2canvas(document.querySelector(".canvasjsChart"));
     return canvas.toDataURL();
   }
 };
-chartReport(dataString);
