@@ -7,36 +7,80 @@ const dataString = JSON.stringify({
   StationingEnd: 120.0,
   ResponseKey: "AmbergRmsNotificationPayload",
   Culture: "en",
-  NumberOfChartPoints: 6000,
+  NumberOfChartPoints: 1000,
   LocalizationScale: 2000,
-  TwistBaseLength: 1,
   ChartParameters: [
-    { parameterName: "GaugeDefect", scale: 1 },
-    { parameterName: "GaugeChange1", scale: 1 },
-    { parameterName: "GaugeChange2", scale: 1 },
-    { parameterName: "GaugeChange3", scale: 1 },
-    { parameterName: "Cant", scale: 1 },
-    { parameterName: "TwistBase1", scale: 1 },
-    { parameterName: "TwistBase2", scale: 1 },
-    { parameterName: "TwistBase3", scale: 1 },
-    { parameterName: "AlignmentD1Left", scale: 1 },
-    { parameterName: "AlignmentD1Right", scale: 1 },
-    { parameterName: "AlignmentD2Left", scale: 1 },
-    { parameterName: "AlignmentD2Right", scale: 1 },
-    { parameterName: "LongitudinalLevelD1Left", scale: 1 },
-    { parameterName: "LongitudinalLevelD1Right", scale: 1 },
-    { parameterName: "LongitudinalLevelD2Left", scale: 1 },
-    { parameterName: "LongitudinalLevelD2Right", scale: 1 },
-    { parameterName: "VersineHorizontalLeft", scale: 1 },
-    { parameterName: "VersineHorizontalRight", scale: 1 },
-    { parameterName: "VersineVerticalLeft", scale: 1 },
-    { parameterName: "VersineVerticalRight", scale: 1 },
+    {
+      ParameterName: "GaugeDefect",
+      Scale: 1,
+    },
+    {
+      ParameterName: "GaugeChange1",
+      Scale: 1,
+    },
+    {
+      ParameterName: "Cant",
+      Scale: 10,
+    },
+    {
+      ParameterName: "TwistBase1",
+      Scale: 1,
+    },
+    {
+      ParameterName: "AlignmentD1Left",
+      Scale: 1,
+    },
+    {
+      ParameterName: "AlignmentD1Right",
+      Scale: 1,
+    },
+    {
+      ParameterName: "AlignmentD2Left",
+      Scale: 1,
+    },
+    {
+      ParameterName: "AlignmentD2Right",
+      Scale: 1,
+    },
+    {
+      ParameterName: "LongitudinalLevelD1Left",
+      Scale: 1,
+    },
+    {
+      ParameterName: "LongitudinalLevelD1Right",
+      Scale: 1,
+    },
+    {
+      ParameterName: "LongitudinalLevelD2Left",
+      Scale: 1,
+    },
+    {
+      ParameterName: "LongitudinalLevelD2Right",
+      Scale: 1,
+    },
+    {
+      ParameterName: "VersineHorizontalLeft",
+      Scale: 1,
+    },
+    {
+      ParameterName: "VersineHorizontalRight",
+      Scale: 1,
+    },
+    {
+      ParameterName: "VersineVerticalLeft",
+      Scale: 1,
+    },
+    {
+      ParameterName: "VersineVerticalRight",
+      Scale: 1,
+    },
   ],
-  TotalParameterCount: 20,
+  TotalParameterCount: 19,
   ParameterPerPage: 5,
-  ParameterBlockIndex: 2,
+  ParameterBlockIndex: 0,
   ChartIndex: 1,
-  PageWidth: 195.0,
+  PageWidth: 170.0,
+  ChartDataUrls: null,
   Customer: {
     Name: "",
     Street: "",
@@ -111,8 +155,125 @@ const dataString = JSON.stringify({
     },
   },
   BaseLengths: {
-    GaugeChangeBaseLengths: [1.0],
+    GaugeChangeBaseLengths: [5.0],
     TwistBaseLengths: [3.0],
+  },
+  ProjectInformations: {
+    Id: "6bd60bf1-3c60-44d6-aa0f-229987a6588d",
+    ProjectInfo: {
+      Name: "Test measurement project",
+      Number: null,
+      Comment: null,
+      Start: null,
+      End: null,
+    },
+    CustomerInfo: {
+      Name: "ANIKA222",
+      Country: "Bangladesh",
+      Region: null,
+      Street: null,
+      Town: null,
+      PostalCode: null,
+      Email: null,
+      PhoneNumber: null,
+      HomePage: null,
+      Logo: "c5fa7b03-3b70-4063-b3ea-cf827dc38f5f",
+    },
+    ServiceProviderInfo: {
+      Name: "Pandrol3.0",
+      Country: "Austria",
+      Region: null,
+      Street: null,
+      Town: null,
+      PostalCode: null,
+      Email: null,
+      PhoneNumber: null,
+      HomePage: null,
+      Logo: "dd255c3c-0a4f-4af0-add1-76803e66d19f",
+    },
+    TreeRoot: {
+      ETag: "RzVoqcSk8zzqT2rkwJKE2toigwjdffoyXaI8q1LfOOc=",
+      Id: "6bd60bf1-3c60-44d6-aa0f-229987a6588d",
+      Name: "Root",
+      Number: null,
+      Comment: null,
+      Start: null,
+      End: null,
+      CreatedDate: "2022-03-10T14:09:31Z",
+      ModifiedDate: "2022-05-23T10:47:25Z",
+      Childs: [
+        {
+          Id: "53dc8a7e-bc92-4a95-87d6-1ffd3f385323",
+          Name: "Line section",
+          Number: null,
+          Comment: null,
+          Start: null,
+          End: null,
+          CreatedDate: "2022-03-10T14:09:31Z",
+          ModifiedDate: "2022-03-10T14:09:31Z",
+          Childs: [
+            {
+              Id: "a76277bb-9b56-484c-94a7-9721ba58995d",
+              Name: "Track",
+              Number: null,
+              Comment: null,
+              Start: null,
+              End: null,
+              CreatedDate: "2022-03-10T14:09:31Z",
+              ModifiedDate: "2022-03-10T14:09:31Z",
+              Childs: [],
+              Designs: ["4ada161b-d248-4016-b6a3-398b16a4e9a0"],
+              Jobs: [
+                "8beb51a3-3389-4940-a535-c8544f3dcf79",
+                "7251e234-0d20-4ef3-8ae3-0d7b8d00075b",
+              ],
+              Analysis: [],
+            },
+            {
+              Id: "53858cdb-f966-4af1-a174-06fcf2fefc11",
+              Name: "AAA",
+              Number: "AAA",
+              Comment: "AAA",
+              Start: null,
+              End: null,
+              CreatedDate: "2022-05-11T12:11:02Z",
+              ModifiedDate: "2022-05-11T12:11:02Z",
+              Childs: [],
+              Designs: [],
+              Jobs: [],
+              Analysis: [],
+            },
+            {
+              Id: "065a7d87-a494-41c6-9277-084aa6b1e021",
+              Name: "sas",
+              Number: "sasas",
+              Comment: "asasas",
+              Start: null,
+              End: null,
+              CreatedDate: "2022-05-11T12:41:32Z",
+              ModifiedDate: "2022-05-11T12:41:32Z",
+              Childs: [],
+              Designs: [],
+              Jobs: [],
+              Analysis: [],
+            },
+          ],
+          Designs: [],
+          Jobs: [],
+          Analysis: [],
+        },
+      ],
+      Designs: [],
+      Jobs: [],
+      Analysis: [],
+    },
+    CreatedDate: "2022-03-10T14:09:31Z",
+    ModifiedDate: "2022-05-26T11:27:58Z",
+    Statistics: {
+      OldestMeasurementCreatedDate: "2022-03-10T14:12:23Z",
+      NewestMeasurementCreatedDate: "2022-03-10T14:12:23Z",
+    },
+    ETag: "PzZJ7tkpaoeKuTzYUufARg0SoQo8by/7V/Hh/Dyp91M=",
   },
   VisualTrackDatas: [
     {
@@ -138,12 +299,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -272,12 +427,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 23.61069562877375,
@@ -398,12 +547,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -532,12 +675,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 23.242447346613428,
@@ -658,12 +795,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -792,12 +923,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 23.218088169428313,
@@ -918,12 +1043,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -1052,12 +1171,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 23.26947147523047,
@@ -1178,12 +1291,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -1312,12 +1419,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 22.938444391476683,
@@ -1438,12 +1539,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -1572,12 +1667,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 23.61725672978601,
@@ -1698,12 +1787,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -1832,12 +1915,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 23.742168531144376,
@@ -1958,12 +2035,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -2092,12 +2163,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 23.328874507956762,
@@ -2218,12 +2283,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -2352,12 +2411,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 24.09760925361133,
@@ -2478,12 +2531,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -2612,12 +2659,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 24.147702575040334,
@@ -2738,12 +2779,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -2872,12 +2907,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 23.4971497414843,
@@ -2998,12 +3027,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -3132,12 +3155,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 23.56748238548991,
@@ -3258,12 +3275,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -3392,12 +3403,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 24.3485805612875,
@@ -3518,12 +3523,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -3652,12 +3651,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 24.272587306264594,
@@ -3778,12 +3771,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -3912,12 +3899,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 24.36430779170264,
@@ -4038,12 +4019,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -4172,12 +4147,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 24.603225622620773,
@@ -4298,12 +4267,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -4432,12 +4395,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 24.673936495465664,
@@ -4558,12 +4515,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -4692,12 +4643,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 24.768555204488745,
@@ -4818,12 +4763,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -4952,12 +4891,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 24.405946006857913,
@@ -5078,12 +5011,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -5212,12 +5139,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 24.746402464649083,
@@ -5338,12 +5259,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -5472,12 +5387,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 25.556385565789153,
@@ -5598,12 +5507,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -5732,12 +5635,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 24.95220048650367,
@@ -5858,12 +5755,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -5992,12 +5883,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 25.21731638953325,
@@ -6118,12 +6003,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -6252,12 +6131,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 25.3509702197693,
@@ -6378,12 +6251,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -6512,12 +6379,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 25.416286830124964,
@@ -6638,12 +6499,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -6772,12 +6627,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 25.36048622894216,
@@ -6898,12 +6747,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -7032,12 +6875,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 25.23646980875601,
@@ -7158,12 +6995,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -7292,12 +7123,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 25.02424627647056,
@@ -7418,12 +7243,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -7552,12 +7371,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 25.202985495069164,
@@ -7678,12 +7491,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -7812,12 +7619,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 24.7511356108248,
@@ -7938,12 +7739,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -8072,12 +7867,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 24.7714477145543,
@@ -8198,12 +7987,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -8332,12 +8115,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 24.70868454471554,
@@ -8458,12 +8235,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -8592,12 +8363,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 24.841226763939904,
@@ -8718,12 +8483,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -8852,12 +8611,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 24.219268365127327,
@@ -8978,12 +8731,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -9112,12 +8859,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 24.007294285173778,
@@ -9238,12 +8979,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -9372,12 +9107,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 23.756109938620938,
@@ -9498,12 +9227,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -9632,12 +9355,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 23.49115897246591,
@@ -9758,12 +9475,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -9892,12 +9603,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 23.405017368701365,
@@ -10018,12 +9723,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -10152,12 +9851,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 23.458992458520996,
@@ -10278,12 +9971,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -10412,12 +10099,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 23.56948556686863,
@@ -10538,12 +10219,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -10672,12 +10347,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 23.24869378095484,
@@ -10798,12 +10467,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -10932,12 +10595,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 23.037493885894136,
@@ -11058,12 +10715,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -11192,12 +10843,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 22.589914334070524,
@@ -11318,12 +10963,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -11452,12 +11091,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 22.354491297052103,
@@ -11578,12 +11211,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -11712,12 +11339,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 22.299116241296566,
@@ -11838,12 +11459,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -11972,12 +11587,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 22.38897698687113,
@@ -12098,12 +11707,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -12232,12 +11835,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 22.13259922931247,
@@ -12358,12 +11955,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -12492,12 +12083,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 22.367305321434802,
@@ -12618,12 +12203,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -12752,12 +12331,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 21.906248673174794,
@@ -12878,12 +12451,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -13012,12 +12579,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 22.249230237150208,
@@ -13138,12 +12699,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -13272,12 +12827,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 22.429755114374554,
@@ -13398,12 +12947,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -13532,12 +13075,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 22.4951478216468,
@@ -13658,12 +13195,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -13792,12 +13323,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 22.330375099977694,
@@ -13918,12 +13443,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -14052,12 +13571,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 22.185068313721416,
@@ -14178,12 +13691,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -14312,12 +13819,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 22.32051917234581,
@@ -14438,12 +13939,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -14572,12 +14067,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 22.83597065796163,
@@ -14698,12 +14187,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -14832,12 +14315,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 22.67483945218582,
@@ -14958,12 +14435,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -15092,12 +14563,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 22.938344889864435,
@@ -15218,12 +14683,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -15352,12 +14811,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 22.977610929510323,
@@ -15478,12 +14931,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -15612,12 +15059,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 22.806569564516266,
@@ -15738,12 +15179,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -15872,12 +15307,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 23.21396477730226,
@@ -15998,12 +15427,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -16132,12 +15555,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 23.00544818392207,
@@ -16258,12 +15675,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -16392,12 +15803,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 23.07590480026977,
@@ -16518,12 +15923,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -16652,12 +16051,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 23.33044989942834,
@@ -16778,12 +16171,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -16912,12 +16299,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 23.35365179461191,
@@ -17038,12 +16419,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -17172,12 +16547,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 23.25276942734964,
@@ -17298,12 +16667,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -17432,12 +16795,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 23.256506872753025,
@@ -17558,12 +16915,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -17692,12 +17043,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 23.62200811833058,
@@ -17818,12 +17163,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -17952,12 +17291,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 23.626013098222558,
@@ -18078,12 +17411,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -18212,12 +17539,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 23.532338526574733,
@@ -18338,12 +17659,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -18472,12 +17787,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 23.438638701402656,
@@ -18598,12 +17907,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -18732,12 +18035,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 23.975067519507895,
@@ -18858,12 +18155,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -18992,12 +18283,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 23.969647104385768,
@@ -19118,12 +18403,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -19252,12 +18531,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 24.24095309812825,
@@ -19378,12 +18651,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -19512,12 +18779,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 24.241962023742506,
@@ -19638,12 +18899,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -19772,12 +19027,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 24.46887579186034,
@@ -19898,12 +19147,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -20032,12 +19275,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 24.305312404174128,
@@ -20158,12 +19395,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -20292,12 +19523,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 24.216749444665346,
@@ -20418,12 +19643,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -20552,12 +19771,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 23.746411794763894,
@@ -20678,12 +19891,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -20812,12 +20019,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 24.064577268226834,
@@ -20938,12 +20139,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -21072,12 +20267,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 24.40943534382994,
@@ -21198,12 +20387,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -21332,12 +20515,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 24.24029028942123,
@@ -21458,12 +20635,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -21592,12 +20763,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 24.772686658375488,
@@ -21718,12 +20883,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -21852,12 +21011,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 24.43153291373379,
@@ -21978,12 +21131,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -22112,12 +21259,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 24.275735224549926,
@@ -22238,12 +21379,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -22372,12 +21507,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 24.767333444194655,
@@ -22498,12 +21627,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -22632,12 +21755,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 24.553736228283455,
@@ -22758,12 +21875,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -22892,12 +22003,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 24.94904501760936,
@@ -23018,12 +22123,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -23152,12 +22251,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 25.03131286895912,
@@ -23278,12 +22371,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -23412,12 +22499,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 24.89574070343187,
@@ -23538,12 +22619,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -23672,12 +22747,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 25.163526422458474,
@@ -23798,12 +22867,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -23932,12 +22995,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 24.763222787048594,
@@ -24058,12 +23115,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -24192,12 +23243,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 24.472141420128484,
@@ -24318,12 +23363,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -24452,12 +23491,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 24.710496842003494,
@@ -24578,12 +23611,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -24712,12 +23739,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 24.07393218996362,
@@ -24838,12 +23859,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -24972,12 +23987,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 23.89813486337508,
@@ -25098,12 +24107,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -25232,12 +24235,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 23.640978168874593,
@@ -25358,12 +24355,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -25492,12 +24483,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 23.694485182335537,
@@ -25618,12 +24603,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -25752,12 +24731,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 23.375950248195934,
@@ -25878,12 +24851,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -26012,12 +24979,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 22.869697818037103,
@@ -26138,12 +25099,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -26272,12 +25227,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 22.611692424718132,
@@ -26398,12 +25347,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -26532,12 +25475,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 22.303546593481236,
@@ -26658,12 +25595,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -26792,12 +25723,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 21.903616779601553,
@@ -26918,12 +25843,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -27052,12 +25971,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 21.332294327810065,
@@ -27178,12 +26091,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -27312,12 +26219,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 21.549599513441784,
@@ -27438,12 +26339,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -27572,12 +26467,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 21.441620166107437,
@@ -27698,12 +26587,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -27832,12 +26715,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 20.394022929639274,
@@ -27958,12 +26835,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -28092,12 +26963,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 20.919710482475146,
@@ -28218,12 +27083,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -28352,12 +27211,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 20.538742525077566,
@@ -28478,12 +27331,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -28612,12 +27459,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 19.780144529625762,
@@ -28738,12 +27579,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -28872,12 +27707,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 20.050977083414995,
@@ -28998,12 +27827,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -29132,12 +27955,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 20.051713273122395,
@@ -29258,12 +28075,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -29392,12 +28203,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 19.423309558262613,
@@ -29518,12 +28323,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -29652,12 +28451,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 20.054078150990698,
@@ -29778,12 +28571,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -29912,12 +28699,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 20.348925408679712,
@@ -30038,12 +28819,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -30172,12 +28947,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 20.087353962137392,
@@ -30298,12 +29067,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -30432,12 +29195,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 19.872085626544287,
@@ -30558,12 +29315,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -30692,12 +29443,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 19.536055549967603,
@@ -30818,12 +29563,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -30952,12 +29691,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 19.31064874429205,
@@ -31078,12 +29811,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -31212,12 +29939,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 19.42322556093643,
@@ -31338,12 +30059,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -31472,12 +30187,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 18.610712423073927,
@@ -31598,12 +30307,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -31732,12 +30435,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 18.47820436265898,
@@ -31858,12 +30555,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -31992,12 +30683,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 18.234471155007764,
@@ -32118,12 +30803,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -32252,12 +30931,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 18.24485486893281,
@@ -32378,12 +31051,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -32512,12 +31179,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 18.21456176781388,
@@ -32638,12 +31299,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -32772,12 +31427,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 18.007915398421407,
@@ -32898,12 +31547,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -33032,12 +31675,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 17.96177215981452,
@@ -33158,12 +31795,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -33292,12 +31923,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 17.763377130836435,
@@ -33418,12 +32043,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -33552,12 +32171,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 17.969616042001654,
@@ -33678,12 +32291,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -33812,12 +32419,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 17.798412334217236,
@@ -33938,12 +32539,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -34072,12 +32667,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 18.06108992967931,
@@ -34198,12 +32787,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -34332,12 +32915,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 18.327687054531577,
@@ -34458,12 +33035,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -34592,12 +33163,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 18.37135049432417,
@@ -34718,12 +33283,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -34852,12 +33411,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 18.403095348313666,
@@ -34978,12 +33531,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -35112,12 +33659,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 18.791664348978042,
@@ -35238,12 +33779,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -35372,12 +33907,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 18.669346590473957,
@@ -35498,12 +34027,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -35632,12 +34155,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 18.763126509903245,
@@ -35758,12 +34275,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -35892,12 +34403,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 18.06716330990689,
@@ -36018,12 +34523,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -36152,12 +34651,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 18.489614357254638,
@@ -36278,12 +34771,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -36412,12 +34899,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 19.227929224964715,
@@ -36538,12 +35019,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -36672,12 +35147,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 19.473557838064885,
@@ -36798,12 +35267,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -36932,12 +35395,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 19.65927951148258,
@@ -37058,12 +35515,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -37192,12 +35643,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 19.879385455578465,
@@ -37318,12 +35763,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -37452,12 +35891,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 19.79661708939702,
@@ -37578,12 +36011,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -37712,12 +36139,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 19.807975384079064,
@@ -37838,12 +36259,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -37972,12 +36387,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 20.273577751606446,
@@ -38098,12 +36507,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -38232,12 +36635,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 20.37642437611102,
@@ -38358,12 +36755,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -38492,12 +36883,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 20.241584972916378,
@@ -38618,12 +37003,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -38752,12 +37131,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 20.31646881969526,
@@ -38878,12 +37251,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -39012,12 +37379,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 21.04633855988563,
@@ -39138,12 +37499,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -39272,12 +37627,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 20.7787572436987,
@@ -39398,12 +37747,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -39532,12 +37875,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 21.499818799030493,
@@ -39658,12 +37995,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -39792,12 +38123,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 21.473845265525807,
@@ -39918,12 +38243,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -40052,12 +38371,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 21.65376286210765,
@@ -40178,12 +38491,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -40312,12 +38619,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 22.191399251341902,
@@ -40438,12 +38739,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -40572,12 +38867,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 22.747521549558684,
@@ -40698,12 +38987,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -40832,12 +39115,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 22.692237981806965,
@@ -40958,12 +39235,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -41092,12 +39363,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 23.227745501211096,
@@ -41218,12 +39483,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -41352,12 +39611,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 22.86317263170484,
@@ -41478,12 +39731,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -41612,12 +39859,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 23.26755569437021,
@@ -41738,12 +39979,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -41872,12 +40107,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 23.589303453891137,
@@ -41998,12 +40227,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -42132,12 +40355,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 23.225111659240184,
@@ -42258,12 +40475,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -42392,12 +40603,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 23.75485979924194,
@@ -42518,12 +40723,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -42652,12 +40851,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 23.640464372057053,
@@ -42778,12 +40971,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -42912,12 +41099,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 23.352237409142287,
@@ -43038,12 +41219,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -43172,12 +41347,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 23.382388100475158,
@@ -43298,12 +41467,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -43432,12 +41595,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 23.15866641332941,
@@ -43558,12 +41715,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -43692,12 +41843,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 23.030794291025146,
@@ -43818,12 +41963,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -43952,12 +42091,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 23.283443441291695,
@@ -44078,12 +42211,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -44212,12 +42339,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 22.887241064402602,
@@ -44338,12 +42459,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -44472,12 +42587,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 22.82051053111197,
@@ -44598,12 +42707,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -44732,12 +42835,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 22.579325787401686,
@@ -44858,12 +42955,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -44992,12 +43083,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 22.693161491668754,
@@ -45118,12 +43203,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -45252,12 +43331,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 22.67069431030658,
@@ -45378,12 +43451,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -45512,12 +43579,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 23.21578972100498,
@@ -45638,12 +43699,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -45772,12 +43827,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 23.288665184089126,
@@ -45898,12 +43947,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -46032,12 +44075,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 23.290815980471322,
@@ -46158,12 +44195,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -46292,12 +44323,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 22.827481678404137,
@@ -46418,12 +44443,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -46552,12 +44571,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 23.128469918157222,
@@ -46678,12 +44691,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -46812,12 +44819,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 22.77642173125885,
@@ -46938,12 +44939,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -47072,12 +45067,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 22.630082661761616,
@@ -47198,12 +45187,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -47332,12 +45315,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 22.69866906882607,
@@ -47458,12 +45435,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -47592,12 +45563,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 22.746467798889178,
@@ -47718,12 +45683,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -47852,12 +45811,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 22.971403759765725,
@@ -47978,12 +45931,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -48112,12 +46059,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 23.071048979675698,
@@ -48238,12 +46179,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -48372,12 +46307,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 22.754390873106015,
@@ -48498,12 +46427,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -48632,12 +46555,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 22.488111699355848,
@@ -48758,12 +46675,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -48892,12 +46803,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 22.509095447946464,
@@ -49018,12 +46923,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -49152,12 +47051,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 22.66479097120658,
@@ -49278,12 +47171,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -49412,12 +47299,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 22.642213347169523,
@@ -49538,12 +47419,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -49672,12 +47547,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 23.095907137127078,
@@ -49798,12 +47667,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -49932,12 +47795,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 22.411735878713,
@@ -50058,12 +47915,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -50192,12 +48043,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 22.890905566139182,
@@ -50318,12 +48163,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -50452,12 +48291,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 22.790953856876026,
@@ -50578,12 +48411,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -50712,12 +48539,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 22.599641149652786,
@@ -50838,12 +48659,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -50972,12 +48787,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 23.00950210334572,
@@ -51098,12 +48907,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -51232,12 +49035,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 22.39346135823866,
@@ -51358,12 +49155,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -51492,12 +49283,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 23.082991550745977,
@@ -51618,12 +49403,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -51752,12 +49531,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 22.90651578059036,
@@ -51878,12 +49651,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -52012,12 +49779,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 23.17499958755365,
@@ -52138,12 +49899,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -52272,12 +50027,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 23.6100920443917,
@@ -52398,12 +50147,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -52532,12 +50275,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 23.49019218666375,
@@ -52658,12 +50395,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -52792,12 +50523,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 23.486157224854093,
@@ -52918,12 +50643,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -53052,12 +50771,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 23.522643962680153,
@@ -53178,12 +50891,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -53312,12 +51019,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 23.36699934541301,
@@ -53438,12 +51139,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -53572,12 +51267,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 23.536111722223136,
@@ -53698,12 +51387,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -53832,12 +51515,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 23.390445820683272,
@@ -53958,12 +51635,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -54092,12 +51763,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 23.364809098617794,
@@ -54218,12 +51883,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -54352,12 +52011,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 23.446060892916545,
@@ -54478,12 +52131,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -54612,12 +52259,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 23.899881509327123,
@@ -54738,12 +52379,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -54872,12 +52507,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 23.536486082285847,
@@ -54998,12 +52627,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -55132,12 +52755,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 23.255107258457766,
@@ -55258,12 +52875,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -55392,12 +53003,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 23.1649336452667,
@@ -55518,12 +53123,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -55652,12 +53251,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 22.954612668795054,
@@ -55778,12 +53371,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -55912,12 +53499,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 22.61997502403591,
@@ -56038,12 +53619,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -56172,12 +53747,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 22.59392839057596,
@@ -56298,12 +53867,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -56432,12 +53995,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 22.605228993512885,
@@ -56558,12 +54115,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -56692,12 +54243,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 22.45987064442208,
@@ -56818,12 +54363,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -56952,12 +54491,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 22.73000454967047,
@@ -57078,12 +54611,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -57212,12 +54739,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 21.589271367173627,
@@ -57338,12 +54859,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -57472,12 +54987,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 22.252529014352245,
@@ -57598,12 +55107,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -57732,12 +55235,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 22.323076159652235,
@@ -57858,12 +55355,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -57992,12 +55483,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 22.215854141803057,
@@ -58118,12 +55603,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -58252,12 +55731,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 22.726205402731377,
@@ -58378,12 +55851,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -58512,12 +55979,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 22.72822048367479,
@@ -58638,12 +56099,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -58772,12 +56227,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 23.165100666044687,
@@ -58898,12 +56347,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -59032,12 +56475,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 23.310826120827457,
@@ -59158,12 +56595,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -59292,12 +56723,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 23.097283453780985,
@@ -59418,12 +56843,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -59552,12 +56971,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 23.217442430769356,
@@ -59678,12 +57091,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -59812,12 +57219,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 23.254068253954898,
@@ -59938,12 +57339,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -60072,12 +57467,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 22.86903858848631,
@@ -60198,12 +57587,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -60332,12 +57715,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 22.625357710683236,
@@ -60458,12 +57835,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -60592,12 +57963,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 22.98661769703082,
@@ -60718,12 +58083,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -60852,12 +58211,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 22.44626765997325,
@@ -60978,12 +58331,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -61112,12 +58459,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 22.4645839940979,
@@ -61238,12 +58579,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -61372,12 +58707,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 21.83583461486876,
@@ -61498,12 +58827,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -61632,12 +58955,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 21.897888477028292,
@@ -61758,12 +59075,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -61892,12 +59203,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 21.575188579517242,
@@ -62018,12 +59323,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -62152,12 +59451,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 21.624765317563742,
@@ -62278,12 +59571,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -62412,12 +59699,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 21.91883592569427,
@@ -62538,12 +59819,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -62672,12 +59947,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 22.108315017667273,
@@ -62798,12 +60067,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -62932,12 +60195,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 22.325935936176506,
@@ -63058,12 +60315,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -63192,12 +60443,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 22.29273379033877,
@@ -63318,12 +60563,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -63452,12 +60691,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 22.26312050422424,
@@ -63578,12 +60811,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -63712,12 +60939,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 22.09339506459884,
@@ -63838,12 +61059,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -63972,12 +61187,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 22.056453917805737,
@@ -64098,12 +61307,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -64232,12 +61435,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 22.31005372588867,
@@ -64358,12 +61555,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -64492,12 +61683,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 22.268707020300017,
@@ -64618,12 +61803,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -64752,12 +61931,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 22.272910590712584,
@@ -64878,12 +62051,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -65012,12 +62179,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 22.58573111393724,
@@ -65138,12 +62299,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -65272,12 +62427,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 22.634086830362666,
@@ -65398,12 +62547,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -65532,12 +62675,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 22.762515450841924,
@@ -65658,12 +62795,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -65792,12 +62923,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 22.766667017180115,
@@ -65918,12 +63043,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -66052,12 +63171,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 22.379139732551803,
@@ -66178,12 +63291,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -66312,12 +63419,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 22.29299997578147,
@@ -66438,12 +63539,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -66572,12 +63667,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 23.262939320138837,
@@ -66698,12 +63787,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -66832,12 +63915,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 22.666738493428575,
@@ -66958,12 +64035,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -67092,12 +64163,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 23.04512622998897,
@@ -67218,12 +64283,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -67352,12 +64411,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 22.903803102148494,
@@ -67478,12 +64531,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -67612,12 +64659,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 22.835923372301405,
@@ -67738,12 +64779,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -67872,12 +64907,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 22.461724011713464,
@@ -67998,12 +65027,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -68132,12 +65155,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 22.843418818168736,
@@ -68258,12 +65275,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -68392,12 +65403,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 22.496104744771177,
@@ -68518,12 +65523,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -68652,12 +65651,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 22.015775853609014,
@@ -68778,12 +65771,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -68912,12 +65899,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 22.370247217952272,
@@ -69038,12 +66019,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -69172,12 +66147,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 22.7150278318954,
@@ -69298,12 +66267,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -69432,12 +66395,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 21.76900333728451,
@@ -69558,12 +66515,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -69692,12 +66643,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 23.312611574084098,
@@ -69818,12 +66763,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -69952,12 +66891,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 21.98479712520175,
@@ -70078,12 +67011,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -70212,12 +67139,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 22.519807527006105,
@@ -70338,12 +67259,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -70472,12 +67387,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 22.166578781927416,
@@ -70598,12 +67507,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -70732,12 +67635,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 22.33086564951444,
@@ -70858,12 +67755,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -70992,12 +67883,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 22.470092077863292,
@@ -71118,12 +68003,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -71252,12 +68131,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 22.613834197009304,
@@ -71378,12 +68251,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -71512,12 +68379,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 22.78554422002756,
@@ -71638,12 +68499,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -71772,12 +68627,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 23.672455295990964,
@@ -71898,12 +68747,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -72032,12 +68875,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 23.34496575393588,
@@ -72158,12 +68995,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -72292,12 +69123,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 23.97133463616521,
@@ -72418,12 +69243,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -72552,12 +69371,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 23.285840563769842,
@@ -72678,12 +69491,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -72812,12 +69619,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 23.065503577562414,
@@ -72938,12 +69739,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -73072,12 +69867,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 23.164484980508814,
@@ -73198,12 +69987,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -73332,12 +70115,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 23.08176263247178,
@@ -73458,12 +70235,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -73592,12 +70363,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 23.252019483829834,
@@ -73718,12 +70483,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -73852,12 +70611,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 23.739711608414414,
@@ -73978,12 +70731,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -74112,12 +70859,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 22.77517062828767,
@@ -74238,12 +70979,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -74372,12 +71107,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 22.909047524394968,
@@ -74498,12 +71227,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -74632,12 +71355,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 23.225568865875786,
@@ -74758,12 +71475,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -74892,12 +71603,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 23.316663662205237,
@@ -75018,12 +71723,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -75152,12 +71851,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 22.92326551622863,
@@ -75278,12 +71971,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -75412,12 +72099,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 22.828980238616527,
@@ -75538,12 +72219,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -75672,12 +72347,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 22.50005952951116,
@@ -75798,12 +72467,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -75932,12 +72595,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 22.36119477913222,
@@ -76058,12 +72715,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -76192,12 +72843,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 22.775450763270506,
@@ -76318,12 +72963,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -76452,12 +73091,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 23.092668110223705,
@@ -76578,12 +73211,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -76712,12 +73339,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 23.068804045364395,
@@ -76838,12 +73459,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -76972,12 +73587,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 22.174088859277415,
@@ -77098,12 +73707,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -77232,12 +73835,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 22.15318578951081,
@@ -77358,12 +73955,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -77492,12 +74083,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 22.37911387613067,
@@ -77618,12 +74203,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -77752,12 +74331,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 22.47840296816741,
@@ -77878,12 +74451,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -78012,12 +74579,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 22.562186827173495,
@@ -78138,12 +74699,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -78272,12 +74827,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 22.433129042035095,
@@ -78398,12 +74947,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -78532,12 +75075,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 23.136608782765354,
@@ -78658,12 +75195,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -78792,12 +75323,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 23.389815364582574,
@@ -78918,12 +75443,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -79052,12 +75571,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 23.400707011436616,
@@ -79178,12 +75691,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -79312,12 +75819,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 23.27695709256345,
@@ -79438,12 +75939,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -79572,12 +76067,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 22.78729975715364,
@@ -79698,12 +76187,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -79832,12 +76315,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 23.40405018139294,
@@ -79958,12 +76435,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -80092,12 +76563,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 23.538659309596362,
@@ -80218,12 +76683,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -80352,12 +76811,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 23.65166089557913,
@@ -80478,12 +76931,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -80612,12 +77059,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 23.667895221708235,
@@ -80738,12 +77179,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -80872,12 +77307,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 23.8443346514994,
@@ -80998,12 +77427,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -81132,12 +77555,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 23.36855754162197,
@@ -81258,12 +77675,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -81392,12 +77803,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 23.453328189914842,
@@ -81518,12 +77923,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -81652,12 +78051,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 24.393652993256403,
@@ -81778,12 +78171,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -81912,12 +78299,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 24.065548478183942,
@@ -82038,12 +78419,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -82172,12 +78547,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 23.8662529173701,
@@ -82298,12 +78667,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -82432,12 +78795,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 24.627780211027744,
@@ -82558,12 +78915,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -82692,12 +79043,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 24.780788964352688,
@@ -82818,12 +79163,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -82952,12 +79291,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 24.509057662779423,
@@ -83078,12 +79411,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -83212,12 +79539,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 24.6295694974217,
@@ -83338,12 +79659,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -83472,12 +79787,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 25.196625620694345,
@@ -83598,12 +79907,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -83732,12 +80035,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 24.354185167400935,
@@ -83858,12 +80155,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -83992,12 +80283,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 24.39684151186445,
@@ -84118,12 +80403,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -84252,12 +80531,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 24.593632890552982,
@@ -84378,12 +80651,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -84512,12 +80779,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 24.40173897803271,
@@ -84638,12 +80899,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -84772,12 +81027,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 24.61616965314649,
@@ -84898,12 +81147,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -85032,12 +81275,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 24.90092258737381,
@@ -85158,12 +81395,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -85292,12 +81523,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 25.02129286109258,
@@ -85418,12 +81643,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -85552,12 +81771,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 24.54429753954117,
@@ -85678,12 +81891,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -85812,12 +82019,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 24.55879879784857,
@@ -85938,12 +82139,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -86072,12 +82267,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 24.940224560439102,
@@ -86198,12 +82387,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -86332,12 +82515,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 24.837852449609038,
@@ -86458,12 +82635,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -86592,12 +82763,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 25.409893544425312,
@@ -86718,12 +82883,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -86852,12 +83011,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 25.195689084407746,
@@ -86978,12 +83131,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -87112,12 +83259,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 25.453579783323466,
@@ -87238,12 +83379,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -87372,12 +83507,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 25.519062596893814,
@@ -87498,12 +83627,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -87632,12 +83755,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 26.068180943330244,
@@ -87758,12 +83875,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -87892,12 +84003,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 26.231093496019437,
@@ -88018,12 +84123,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -88152,12 +84251,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 25.654792485667436,
@@ -88278,12 +84371,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -88412,12 +84499,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 25.46559889307834,
@@ -88538,12 +84619,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -88672,12 +84747,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 25.87879285069051,
@@ -88798,12 +84867,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -88932,12 +84995,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 25.33264779730795,
@@ -89058,12 +85115,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -89192,12 +85243,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 25.55504674041512,
@@ -89318,12 +85363,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -89452,12 +85491,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 25.70950921023294,
@@ -89578,12 +85611,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -89712,12 +85739,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 25.469339655446497,
@@ -89838,12 +85859,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -89972,12 +85987,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 25.65382451263063,
@@ -90098,12 +86107,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -90232,12 +86235,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 25.69497353770151,
@@ -90358,12 +86355,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -90492,12 +86483,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 25.716431962882588,
@@ -90618,12 +86603,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -90752,12 +86731,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 25.392468714609457,
@@ -90878,12 +86851,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -91012,12 +86979,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 25.448738751233087,
@@ -91138,12 +87099,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -91272,12 +87227,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 25.346888743207632,
@@ -91398,12 +87347,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -91532,12 +87475,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 26.476017261488774,
@@ -91658,12 +87595,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -91792,12 +87723,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 25.68496853602086,
@@ -91918,12 +87843,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -92052,12 +87971,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 25.86813933025691,
@@ -92178,12 +88091,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -92312,12 +88219,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 26.062795987133132,
@@ -92438,12 +88339,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -92572,12 +88467,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 26.276240364291596,
@@ -92698,12 +88587,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -92832,12 +88715,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 25.559994646877563,
@@ -92958,12 +88835,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -93092,12 +88963,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 26.00719482205066,
@@ -93218,12 +89083,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -93352,12 +89211,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 25.834692074116145,
@@ -93478,12 +89331,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -93612,12 +89459,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 26.36762995807201,
@@ -93738,12 +89579,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -93872,12 +89707,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 26.253204054150775,
@@ -93998,12 +89827,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -94132,12 +89955,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 25.9020208380874,
@@ -94258,12 +90075,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -94392,12 +90203,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 26.355173754254004,
@@ -94518,12 +90323,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -94652,12 +90451,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 25.52598010890644,
@@ -94778,12 +90571,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -94912,12 +90699,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 25.59892117508455,
@@ -95038,12 +90819,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -95172,12 +90947,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 26.231536637194388,
@@ -95298,12 +91067,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -95432,12 +91195,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 26.594893366500838,
@@ -95558,12 +91315,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -95692,12 +91443,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 26.774763596885542,
@@ -95818,12 +91563,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -95952,12 +91691,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 26.41209599589671,
@@ -96078,12 +91811,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -96212,12 +91939,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 26.635615365596664,
@@ -96338,12 +92059,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -96472,12 +92187,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 26.25888867756092,
@@ -96598,12 +92307,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -96732,12 +92435,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 25.894829916991554,
@@ -96858,12 +92555,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -96992,12 +92683,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 25.708323696653252,
@@ -97118,12 +92803,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -97252,12 +92931,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 25.43787208500054,
@@ -97378,12 +93051,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -97512,12 +93179,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 25.662106564517135,
@@ -97638,12 +93299,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -97772,12 +93427,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 25.64340820674837,
@@ -97898,12 +93547,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -98032,12 +93675,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 25.40677900480915,
@@ -98158,12 +93795,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -98292,12 +93923,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 25.813307023012044,
@@ -98418,12 +94043,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -98552,12 +94171,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 25.79053812568201,
@@ -98678,12 +94291,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -98812,12 +94419,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 26.017201654781726,
@@ -98938,12 +94539,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -99072,12 +94667,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 26.31840263999498,
@@ -99198,12 +94787,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -99332,12 +94915,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 26.481962390830894,
@@ -99458,12 +95035,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -99592,12 +95163,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 26.590353747458085,
@@ -99718,12 +95283,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -99852,12 +95411,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 27.21075308595755,
@@ -99978,12 +95531,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -100112,12 +95659,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 26.883900895340805,
@@ -100238,12 +95779,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -100372,12 +95907,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 27.067424729344353,
@@ -100498,12 +96027,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -100632,12 +96155,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 28.416775847454797,
@@ -100758,12 +96275,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -100892,12 +96403,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 27.264185816590235,
@@ -101018,12 +96523,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -101152,12 +96651,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 27.02275005072462,
@@ -101278,12 +96771,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -101412,12 +96899,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 27.051843545731604,
@@ -101538,12 +97019,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -101672,12 +97147,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 27.071882854294163,
@@ -101798,12 +97267,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -101932,12 +97395,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 27.080615557839742,
@@ -102058,12 +97515,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -102192,12 +97643,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 26.978601095089267,
@@ -102318,12 +97763,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -102452,12 +97891,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 27.413223239513062,
@@ -102578,12 +98011,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -102712,12 +98139,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 27.2571011482008,
@@ -102838,12 +98259,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -102972,12 +98387,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 28.184140551111085,
@@ -103098,12 +98507,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -103232,12 +98635,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 27.05439712076028,
@@ -103358,12 +98755,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -103492,12 +98883,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 27.64035842109361,
@@ -103618,12 +99003,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -103752,12 +99131,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 26.582147860489798,
@@ -103878,12 +99251,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -104012,12 +99379,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 26.30604567880831,
@@ -104138,12 +99499,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -104272,12 +99627,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 26.73330781733908,
@@ -104398,12 +99747,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -104532,12 +99875,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 26.71365130487391,
@@ -104658,12 +99995,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -104792,12 +100123,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 26.300345906060027,
@@ -104918,12 +100243,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -105052,12 +100371,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 25.763787789045498,
@@ -105178,12 +100491,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -105312,12 +100619,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 25.412174444213218,
@@ -105438,12 +100739,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -105572,12 +100867,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 25.029484221051522,
@@ -105698,12 +100987,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -105832,12 +101115,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 24.470815229536345,
@@ -105958,12 +101235,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -106092,12 +101363,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 24.710612392049256,
@@ -106218,12 +101483,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -106352,12 +101611,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 25.601370066110896,
@@ -106478,12 +101731,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -106612,12 +101859,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 24.726896454781862,
@@ -106738,12 +101979,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -106872,12 +102107,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 24.735367990779224,
@@ -106998,12 +102227,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -107132,12 +102355,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 24.313505067451473,
@@ -107258,12 +102475,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -107392,12 +102603,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 24.384035447134107,
@@ -107518,12 +102723,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -107652,12 +102851,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 24.086525067805404,
@@ -107778,12 +102971,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -107912,12 +103099,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 24.13695895834134,
@@ -108038,12 +103219,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -108172,12 +103347,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 24.60047835593579,
@@ -108298,12 +103467,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -108432,12 +103595,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 24.167149914314457,
@@ -108558,12 +103715,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -108692,12 +103843,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 23.574588102681204,
@@ -108818,12 +103963,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -108952,12 +104091,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 23.725216768384154,
@@ -109078,12 +104211,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -109212,12 +104339,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 24.378917200252815,
@@ -109338,12 +104459,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -109472,12 +104587,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 24.071951731978952,
@@ -109598,12 +104707,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -109732,12 +104835,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 24.66555952722499,
@@ -109858,12 +104955,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -109992,12 +105083,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 24.728003922852373,
@@ -110118,12 +105203,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -110252,12 +105331,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 24.937868617084956,
@@ -110378,12 +105451,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -110512,12 +105579,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 25.29271092980445,
@@ -110638,12 +105699,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -110772,12 +105827,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 25.91198181634985,
@@ -110898,12 +105947,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -111032,12 +106075,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 25.697685168151068,
@@ -111158,12 +106195,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -111292,12 +106323,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 26.137173989398,
@@ -111418,12 +106443,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -111552,12 +106571,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 26.024805572099996,
@@ -111678,12 +106691,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -111812,12 +106819,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 26.06700059660742,
@@ -111938,12 +106939,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -112072,12 +107067,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 25.6405155768614,
@@ -112198,12 +107187,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -112332,12 +107315,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 25.59632587717458,
@@ -112458,12 +107435,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -112592,12 +107563,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 25.405719159059863,
@@ -112718,12 +107683,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -112852,12 +107811,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 25.451563686845418,
@@ -112978,12 +107931,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -113112,12 +108059,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 25.07023394780894,
@@ -113238,12 +108179,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -113372,12 +108307,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 25.392007899377013,
@@ -113498,12 +108427,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -113632,12 +108555,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 25.33217847292412,
@@ -113758,12 +108675,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -113892,12 +108803,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 25.267377382695106,
@@ -114018,12 +108923,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -114152,12 +109051,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 25.498719230149153,
@@ -114278,12 +109171,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -114412,12 +109299,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 24.880574536490766,
@@ -114538,12 +109419,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -114672,12 +109547,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 24.856135841761432,
@@ -114798,12 +109667,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -114932,12 +109795,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 24.969726052891748,
@@ -115058,12 +109915,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -115192,12 +110043,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 25.364131333200678,
@@ -115318,12 +110163,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -115452,12 +110291,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 24.99774775516681,
@@ -115578,12 +110411,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -115712,12 +110539,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 24.96831742412701,
@@ -115838,12 +110659,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -115972,12 +110787,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 24.97439967030143,
@@ -116098,12 +110907,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -116232,12 +111035,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 24.970181519179018,
@@ -116358,12 +111155,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -116492,12 +111283,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 24.614346424022354,
@@ -116618,12 +111403,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -116752,12 +111531,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 24.681883764151543,
@@ -116878,12 +111651,6 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeChange2",
           Name: "GaugeChange2",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
           Value: 0.0,
           ParameterConfiguration: null,
         },
@@ -117012,12 +111779,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 24.18873883493411,
@@ -117142,12 +111903,6 @@ const dataString = JSON.stringify({
           ParameterConfiguration: null,
         },
         {
-          Id: "GaugeChange3",
-          Name: "GaugeChange3",
-          Value: 0.0,
-          ParameterConfiguration: null,
-        },
-        {
           Id: "Cant",
           Name: "Cant",
           Value: 24.630017348691958,
@@ -117261,25 +112016,43 @@ const dataString = JSON.stringify({
   ],
   EventInformations: [
     {
-      TrackEventID: "336f23c1-2539-4dbe-a2a2-4e35f4a6c3c0",
-      StationingStart: 5.0,
-      StationingEnd: 100.0,
-      Comment: "",
-      TypeId: "ARC",
-      Name: "Curve",
-      Abbr: "ARC",
-      Group: "Track&Line",
+      TrackEventID: "e4aef5c8-e244-4fdb-a621-0f368d3a01e7",
+      StationingStart: 0.1,
+      StationingEnd: 33.0,
+      Comment: "eeeeeeee",
+      TypeId: "CKR",
+      Name: "Checkrail (Guard-Rail)",
+      Abbr: "CKR",
+      Group: "Track Infrastructure",
       IsRange: true,
-      PositionsMask: 1,
+      PositionsMask: 6,
       TimestampHWStart: 0,
       TimestampHWEnd: 0,
-      DateCreated: "2022-05-11T06:19:25Z",
-      DateModified: "2022-05-11T10:11:12Z",
+      DateCreated: "2022-05-25T09:49:27Z",
+      DateModified: "2022-05-25T09:49:27Z",
       DocumentCount: 1,
-      ImageCount: 1,
+      ImageCount: 2,
     },
     {
-      TrackEventID: "99f4d9de-1c4f-49cc-88d1-a488fb83b4e7",
+      TrackEventID: "a199b251-a05d-4fb8-9ec0-d47106d81841",
+      StationingStart: 94.0,
+      StationingEnd: 99.0,
+      Comment: "",
+      TypeId: "CKR",
+      Name: "Checkrail (Guard-Rail)",
+      Abbr: "CKR",
+      Group: "Track Infrastructure",
+      IsRange: true,
+      PositionsMask: 6,
+      TimestampHWStart: 0,
+      TimestampHWEnd: 0,
+      DateCreated: "2022-05-25T09:24:19Z",
+      DateModified: "2022-05-26T07:51:14Z",
+      DocumentCount: 0,
+      ImageCount: 0,
+    },
+    {
+      TrackEventID: "dbe61f46-05cf-40d4-a1e7-ac9bf18c685e",
       StationingStart: 100.0,
       StationingEnd: 150.0,
       Comment: "",
@@ -117291,8 +112064,8 @@ const dataString = JSON.stringify({
       PositionsMask: 1,
       TimestampHWStart: 0,
       TimestampHWEnd: 0,
-      DateCreated: "2022-05-11T06:19:25Z",
-      DateModified: "2022-05-11T06:19:25Z",
+      DateCreated: "2022-05-25T09:24:19Z",
+      DateModified: "2022-05-25T09:24:19Z",
       DocumentCount: 0,
       ImageCount: 0,
     },
@@ -117382,17 +112155,17 @@ const chartReport = (dataString) => {
       columnName: "Gauge",
     },
     ...(GaugeChangeBaseLengths.length
-      ? GaugeChangeBaseLengths.map((value) => {
+      ? GaugeChangeBaseLengths.map((value, index) => {
           return {
-            id: `GaugeChange${value}m`,
+            id: `GaugeChange${index + 1}`,
             columnName: `Gauge Change ${value}m`,
           };
         })
       : []),
     ...(TwistBaseLengths.length
-      ? TwistBaseLengths.map((value) => {
+      ? TwistBaseLengths.map((value, index) => {
           return {
-            id: `TwistBase${value}m`,
+            id: `TwistBase${index + 1}`,
             columnName: `Twist Base ${value}m`,
           };
         })
@@ -117402,12 +112175,12 @@ const chartReport = (dataString) => {
   const startingIndex = (ParameterBlockIndex + 1) * ParameterPerPage;
   for (let i = startingIndex - 1; i >= endingIndex; i--) {
     let chart = charts.find(
-      (chart) => chart.id === ChartParameters[i].parameterName
+      (chart) => chart.id === ChartParameters[i].ParameterName
     );
     if (chart) {
       chart = {
         ...chart,
-        scale: ChartParameters[i].scale,
+        scale: ChartParameters[i].Scale,
       };
       chartTypes.push(chart);
     }
@@ -117416,7 +112189,6 @@ const chartReport = (dataString) => {
     id: "Localizations",
     columnName: "Localization Info",
   });
-
   const chartContainerNode = document.createElement("div");
   chartContainerNode.classList.add("chartContainer");
   document
@@ -117585,14 +112357,14 @@ const chartReport = (dataString) => {
           chartList.length
         );
         let height = (Math.abs(maxY - minY) / param.scale) * 3.7795275591;
-        if (!height) {
+        if (height < 8) {
           height = 8;
         }
         if (chartList.length === 5) {
           height = 132;
         }
         chartList.push({
-          height: height,
+          height: height * 2,
           backgroundColor:
             chartList.length % 2 === 0
               ? "rgb(220, 220, 220, 0.5)"
@@ -117685,9 +112457,9 @@ const chartReport = (dataString) => {
         document.querySelector(`#${chartParameterIdAttr}`).style.width = `${
           PageWidth * 2
         }px`;
-        document.querySelector(
-          `#${chartParameterIdAttr}`
-        ).style.height = `${height}px`;
+        document.querySelector(`#${chartParameterIdAttr}`).style.height = `${
+          height * 2
+        }px`;
         const stockChart = new CanvasJS.StockChart(
           `${chartParameterIdAttr}`,
           options

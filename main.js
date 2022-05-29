@@ -79,17 +79,17 @@ async (dataString) => {
       columnName: "Gauge",
     },
     ...(GaugeChangeBaseLengths.length
-      ? GaugeChangeBaseLengths.map((value) => {
+      ? GaugeChangeBaseLengths.map((value, index) => {
           return {
-            id: `GaugeChange${value}m`,
+            id: `GaugeChange${index + 1}`,
             columnName: `Gauge Change ${value}m`,
           };
         })
       : []),
     ...(TwistBaseLengths.length
-      ? TwistBaseLengths.map((value) => {
+      ? TwistBaseLengths.map((value, index) => {
           return {
-            id: `TwistBase${value}m`,
+            id: `TwistBase${index + 1}`,
             columnName: `Twist Base ${value}m`,
           };
         })
@@ -99,12 +99,12 @@ async (dataString) => {
   const startingIndex = (ParameterBlockIndex + 1) * ParameterPerPage;
   for (let i = startingIndex - 1; i >= endingIndex; i--) {
     let chart = charts.find(
-      (chart) => chart.id === ChartParameters[i].parameterName
+      (chart) => chart.id === ChartParameters[i].ParameterName
     );
     if (chart) {
       chart = {
         ...chart,
-        scale: ChartParameters[i].scale,
+        scale: ChartParameters[i].Scale,
       };
       chartTypes.push(chart);
     }
@@ -113,7 +113,6 @@ async (dataString) => {
     id: "Localizations",
     columnName: "Localization Info",
   });
-
   const chartContainerNode = document.createElement("div");
   chartContainerNode.classList.add("chartContainer");
   document
@@ -282,14 +281,14 @@ async (dataString) => {
           chartList.length
         );
         let height = (Math.abs(maxY - minY) / param.scale) * 3.7795275591;
-        if (!height) {
+        if (height < 8) {
           height = 8;
         }
         if (chartList.length === 5) {
           height = 132;
         }
         chartList.push({
-          height: height,
+          height: height * 2,
           backgroundColor:
             chartList.length % 2 === 0
               ? "rgb(220, 220, 220, 0.5)"
@@ -382,9 +381,9 @@ async (dataString) => {
         document.querySelector(`#${chartParameterIdAttr}`).style.width = `${
           PageWidth * 2
         }px`;
-        document.querySelector(
-          `#${chartParameterIdAttr}`
-        ).style.height = `${height}px`;
+        document.querySelector(`#${chartParameterIdAttr}`).style.height = `${
+          height * 2
+        }px`;
         const stockChart = new CanvasJS.StockChart(
           `${chartParameterIdAttr}`,
           options
