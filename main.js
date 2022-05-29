@@ -109,7 +109,7 @@ async (dataString) => {
     if (chart) {
       chart = {
         ...chart,
-        scale: ChartParameters[i].Scale,
+        scale: Number(ChartParameters[i].Scale),
       };
       chartTypes.push(chart);
     }
@@ -285,7 +285,8 @@ async (dataString) => {
           speedZones,
           chartList.length
         );
-        let height = (Math.abs(maxY - minY) / param.scale) * 3.7795275591;
+        let height =
+          ((Math.abs(maxY - minY) / param.scale) * 3.7795275591) / 1.17;
         if (height < 10) {
           height = 10;
         }
@@ -293,7 +294,7 @@ async (dataString) => {
           height = 132;
         }
         chartList.push({
-          height: height * 2,
+          height: height * 2, //ratio = 1.17 for consistent heights
           backgroundColor:
             chartList.length % 2 === 0
               ? "rgb(220, 220, 220, 0.5)"
