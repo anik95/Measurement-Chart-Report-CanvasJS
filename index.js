@@ -77,7 +77,7 @@ const dataString = JSON.stringify({
   ],
   TotalParameterCount: 16,
   ParameterPerPage: 5,
-  ParameterBlockIndex: 3,
+  ParameterBlockIndex: 1,
   ChartIndex: 1,
   PageWidth: 170.0,
   ChartDataUrls: null,
@@ -112362,8 +112362,8 @@ const chartReport = (dataString) => {
           chartList.length
         );
         let height = (Math.abs(maxY - minY) / param.scale) * 3.7795275591;
-        if (height < 8) {
-          height = 8;
+        if (height < 10) {
+          height = 10;
         }
         if (chartList.length === paramCount) {
           height = 132;
