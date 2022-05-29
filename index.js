@@ -75,9 +75,9 @@ const dataString = JSON.stringify({
       Scale: 1,
     },
   ],
-  TotalParameterCount: 19,
+  TotalParameterCount: 16,
   ParameterPerPage: 5,
-  ParameterBlockIndex: 0,
+  ParameterBlockIndex: 3,
   ChartIndex: 1,
   PageWidth: 170.0,
   ChartDataUrls: null,
@@ -112090,6 +112090,7 @@ const chartReport = (dataString) => {
     ChartParameters,
     LocalizationScale,
     BaseLengths: { GaugeChangeBaseLengths, TwistBaseLengths },
+    TotalParameterCount,
   } = parsedData;
   const widthRatio = LocalizationScale / 100;
   const chartTypes = [];
@@ -112136,11 +112137,11 @@ const chartReport = (dataString) => {
     },
     {
       id: "AlignmentD1Right",
-      columnName: "Alignment D1 Left",
+      columnName: "Alignment D1 Right",
     },
     {
       id: "AlignmentD1Left",
-      columnName: "Alignment D1 Right",
+      columnName: "Alignment D1 Left",
     },
     // {
     //   id: "CantDefect",
@@ -112172,7 +112173,11 @@ const chartReport = (dataString) => {
       : []),
   ];
   const endingIndex = ParameterBlockIndex * ParameterPerPage;
-  const startingIndex = (ParameterBlockIndex + 1) * ParameterPerPage;
+  const startingIndex =
+    (ParameterBlockIndex + 1) * ParameterPerPage > TotalParameterCount
+      ? TotalParameterCount
+      : (ParameterBlockIndex + 1) * ParameterPerPage;
+  const paramCount = Math.abs(endingIndex - startingIndex);
   for (let i = startingIndex - 1; i >= endingIndex; i--) {
     let chart = charts.find(
       (chart) => chart.id === ChartParameters[i].ParameterName
@@ -112227,7 +112232,7 @@ const chartReport = (dataString) => {
         labelBackgroundColor: "#fff",
         color: "#000",
         label:
-          chartListLength === 5
+          chartListLength === paramCount
             ? `${event.StationingStart}, ${event.Abbr.toUpperCase()}${
                 event.IsRange ? "\u25BC" : ""
               }`
@@ -112249,7 +112254,7 @@ const chartReport = (dataString) => {
           color: "#000",
           labelBackgroundColor: "#fff",
           label:
-            chartListLength === 5
+            chartListLength === paramCount
               ? `${event.StationingEnd.toString()}, ${event.Abbr.toLowerCase()}\u25B2`
               : "",
           showOnTop: true,
@@ -112273,7 +112278,7 @@ const chartReport = (dataString) => {
       lineDashType: "longDashDot",
       color: "#000",
       label:
-        chartListLength === 5
+        chartListLength === paramCount
           ? `${limit.MinSpeed.toFixed(1)}<V<=${limit.MaxSpeed.toFixed(
               1
             )} \u25BC`
@@ -112310,7 +112315,7 @@ const chartReport = (dataString) => {
     const node = document.querySelector(
       `.chartContainer:last-of-type .row:nth-of-type(${index + 1}) p`
     );
-    if (index === 5) {
+    if (index === paramCount) {
       node.innerHTML = "Localisation Info [m]";
       return;
     }
@@ -112360,7 +112365,7 @@ const chartReport = (dataString) => {
         if (height < 8) {
           height = 8;
         }
-        if (chartList.length === 5) {
+        if (chartList.length === paramCount) {
           height = 132;
         }
         chartList.push({
@@ -112420,7 +112425,7 @@ const chartReport = (dataString) => {
             labelFontSize: 13, //9
             interval: 5 * widthRatio,
             labelFormatter:
-              chartList.length === 5
+              chartList.length === paramCount
                 ? (e) =>
                     Number(e.value) > StationingEnd &&
                     Number(e.value) < StationingStart
@@ -112434,7 +112439,8 @@ const chartReport = (dataString) => {
             {
               type: "line",
               lineDashType: "solid",
-              axisXType: chartList.length === 5 ? "primary" : "secondary",
+              axisXType:
+                chartList.length === paramCount ? "primary" : "secondary",
               markerSize: 0,
               dataPoints: lineChartDataPoints,
               lineColor: "black",
