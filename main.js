@@ -411,7 +411,7 @@ async (dataString) => {
         .classList.add("add-top-border");
     }
     document.querySelector(".canvasjsChart").style.width = `${
-      (PageWidth + 21) * 2
+      (PageWidth + 36) * 2
     }px`;
     var canvas = await html2canvas(document.querySelector(".canvasjsChart"));
     return canvas.toDataURL();
