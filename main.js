@@ -3,7 +3,7 @@ async (dataString) => {
   if (!parsedData) return;
   const {
     VisualTrackDatas,
-    Events: events,
+    EventInformations: events,
     StationingStart,
     StationingEnd,
     PageWidth,
@@ -116,7 +116,7 @@ async (dataString) => {
   }
   chartTypes.push({
     id: "Localizations",
-    columnName: "Localization Info",
+    columnName: "Localization Information",
   });
   const chartContainerNode = document.createElement("div");
   chartContainerNode.classList.add("chartContainer");
