@@ -14,18 +14,20 @@
         /* border: 2px solid black; */
       }
       #measurement-chart-container {
-        display: flex;
+        /* display: flex; */
         align-items: flex-start;
         justify-content: flex-start;
         flex-direction: column;
+        width: 100%;
       }
       .chartContainer {
         page-break-after: always;
-        min-height: 798px; /*1596px*/
+        min-width: 798px; /*1596px */
+        max-width: 798px;
         display: flex;
         flex-direction: column;
         justify-content: flex-end;
-        border: 2px solid black;
+        border-left: 2px solid black;
         transform: rotate(90deg);
       }
       .chart {
@@ -44,6 +46,7 @@
         box-sizing: border-box;
         overflow: hidden;
         background-color: transparent;
+        border-right: 1px solid #000;
       }
       .row:nth-of-type(odd) {
         background-color: rgba(220, 220, 220, 0.5);
@@ -57,14 +60,18 @@
         z-index: 1;
       }
       .row:first-of-type {
-        border-top: 0;
+        /* border-top: 0; */
         margin: 0;
+      }
+      .row:last-of-type {
+        border-bottom: 2px solid #000;
+        /* margin: 0; */
       }
       .row.add-top-border {
         border-top: 1px solid #000;
       }
       .row:last-of-type {
-        border-bottom: 0;
+        /* border-bottom: 0; */
       }
       .chartColumnName {
         height: 132px; /*132px*/
