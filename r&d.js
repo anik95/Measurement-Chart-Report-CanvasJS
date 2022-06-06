@@ -413,9 +413,13 @@ async (dataString) => {
         .querySelector(".chartContainer:last-of-type .row:first-of-type")
         .classList.add("add-top-border");
     }
+    document.querySelectorAll(`.row`).forEach((row) => {
+      console.log("row: ", row);
+      row.style.width = `${PageWidth + 38}px`;
+    });
     // document.querySelector(".canvasjsChart").style.width = `${
     // (PageWidth + 36) * 2
-    PageWidth + 36;
+    // PageWidth + 36;
     // }px`;
     // var canvas = await html2canvas(document.querySelector(".canvasjsChart"));
     // return canvas.toDataURL();
