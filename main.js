@@ -413,7 +413,7 @@ async (dataString) => {
     document.querySelector(".canvasjsChart").style.width = `${
       (PageWidth + 36) * 2
     }px`;
-    var canvas = await html2canvas(document.querySelector(".canvasjsChart"));
-    return canvas.toDataURL();
+    // var canvas = await html2canvas(document.querySelector(".canvasjsChart"));
+    // return canvas.toDataURL();
   }
 };
