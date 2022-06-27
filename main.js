@@ -419,12 +419,12 @@ async (dataString) => {
           options
         );
         stockChart.render();
-        // stockChart.charts[0].axisY[0].set(
-        //   "margin",
-        //   35 -
-        //     stockChart.charts[0].axisY[0].bounds.x2 -
-        //     stockChart.charts[0].axisY[0].bounds.x1
-        // );
+        stockChart.charts[0].axisY[0].set(
+          "margin",
+          35 -
+            stockChart.charts[0].axisY[0].bounds.x2 -
+            stockChart.charts[0].axisY[0].bounds.x1
+        );
         index++;
       }
     }
