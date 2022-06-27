@@ -4,8 +4,8 @@ async (dataString) => {
   const {
     VisualTrackDatas,
     EventInformations: events,
-    MeasuredStationingStart: StationingStart,
-    MeasuredStationingEnd: StationingEnd,
+    StationingStart,
+    StationingEnd,
     PageWidth,
     ChartIndex,
     ModifiedSpeedElements,
@@ -15,8 +15,6 @@ async (dataString) => {
     LocalizationScale,
     BaseLengths: { GaugeChangeBaseLengths, TwistBaseLengths },
     TotalParameterCount,
-    NominalGauge,
-    StationingLabels,
   } = parsedData;
   const widthRatio = LocalizationScale / 100;
   const chartTypes = [];
@@ -152,14 +150,14 @@ async (dataString) => {
     const eventStripLines = [];
     events?.forEach((event) => {
       eventStripLines.push({
-        value: event.MeasuredStationingStart,
+        value: event.StationingStart,
         labelPlacement: "outside",
         lineDashType: "longDash",
         labelBackgroundColor: "#fff",
         color: "#000",
         label:
           chartListLength === paramCount
-            ? `${event.MappedStationingStart}, ${event.Abbr.toUpperCase()}${
+            ? `${event.StationingStart}, ${event.Abbr.toUpperCase()}${
                 event.IsRange ? "\u25BC" : ""
               }`
             : "",
@@ -174,14 +172,14 @@ async (dataString) => {
       });
       if (event.IsRange) {
         eventStripLines.push({
-          value: event.MeasuredStationingEnd,
+          value: event.StationingEnd,
           labelPlacement: "outside",
           lineDashType: "longDash",
           color: "#000",
           labelBackgroundColor: "#fff",
           label:
             chartListLength === paramCount
-              ? `${event.MappedStationingEnd.toString()}, ${event.Abbr.toLowerCase()}\u25B2`
+              ? `${event.StationingEnd.toString()}, ${event.Abbr.toLowerCase()}\u25B2`
               : "",
           showOnTop: true,
           labelFontColor: "#000",
@@ -287,16 +285,6 @@ async (dataString) => {
           speedZones,
           chartList.length
         );
-        let referenceLine = 0;
-        if (
-          param.id.toLowerCase().indexOf("versine") !== -1 ||
-          param.id.toLowerCase().indexOf("cant") !== -1
-        ) {
-          referenceLine = Math.round((maxY - minY) / 2 + minY);
-        } else if (param.id.toLowerCase().indexOf("gaugedefect") !== -1) {
-          referenceLine = NominalGauge;
-        }
-
         let height =
           ((Math.abs(maxY - minY) / param.scale) * 3.7795275591) / 1.17;
         if (height < 10) {
@@ -344,20 +332,11 @@ async (dataString) => {
             labelFontSize: 14, //10
             stripLines: [
               {
-                value: referenceLine,
+                value: 0,
                 labelAutoFit: true,
-                labelPlacement: "outside",
                 lineDashType: "solid",
                 color: "#000",
-                label: referenceLine.toFixed(0),
-                showOnTop: true,
-                labelFontColor: "#000",
-                labelFontFamily: "Roboto",
-                labelWrap: false,
-                labelAlign: "near",
-                labelBackgroundColor: "transparent",
-                labelFontSize: 14,
-                labelMaxWidth: 30,
+                label: "",
               },
             ],
           },
@@ -376,9 +355,7 @@ async (dataString) => {
                     Number(e.value) > StationingEnd &&
                     Number(e.value) < StationingStart
                       ? ""
-                      : StationingLabels.find(
-                          (label) => label.MeasuredStationingPoint === e.value
-                        )?.MappedStationingPoint || ""
+                      : e.value
                 : () => "",
             labelAngle: 270,
             stripLines: [...eventStripLines, ...speedZoneStripLines],
@@ -424,7 +401,7 @@ async (dataString) => {
         //   35 -
         //     stockChart.charts[0].axisY[0].bounds.x2 -
         //     stockChart.charts[0].axisY[0].bounds.x1
-        // );
+        // )
         index++;
       }
     }
