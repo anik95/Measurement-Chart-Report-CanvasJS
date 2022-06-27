@@ -4,8 +4,8 @@ async (dataString) => {
   const {
     VisualTrackDatas,
     EventInformations: events,
-    StationingStart,
-    StationingEnd,
+    MeasuredStationingStart: StationingStart,
+    MeasuredStationingEnd: StationingEnd,
     PageWidth,
     ChartIndex,
     ModifiedSpeedElements,
@@ -15,6 +15,8 @@ async (dataString) => {
     LocalizationScale,
     BaseLengths: { GaugeChangeBaseLengths, TwistBaseLengths },
     TotalParameterCount,
+    NominalGauge,
+    StationingLabels,
   } = parsedData;
   const widthRatio = LocalizationScale / 100;
   const chartTypes = [];
@@ -150,14 +152,14 @@ async (dataString) => {
     const eventStripLines = [];
     events?.forEach((event) => {
       eventStripLines.push({
-        value: event.StationingStart,
+        value: event.MeasuredStationingStart,
         labelPlacement: "outside",
         lineDashType: "longDash",
         labelBackgroundColor: "#fff",
         color: "#000",
         label:
           chartListLength === paramCount
-            ? `${event.StationingStart}, ${event.Abbr.toUpperCase()}${
+            ? `${event.MappedStationingStart}, ${event.Abbr.toUpperCase()}${
                 event.IsRange ? "\u25BC" : ""
               }`
             : "",
@@ -167,19 +169,19 @@ async (dataString) => {
         labelWrap: true,
         labelAlign: "near",
         labelAngle: 270,
-        labelFontSize: 14, //19
+        labelFontSize: 10, //14
         labelMaxWidth: 130,
       });
       if (event.IsRange) {
         eventStripLines.push({
-          value: event.StationingEnd,
+          value: event.MeasuredStationingEnd,
           labelPlacement: "outside",
           lineDashType: "longDash",
           color: "#000",
           labelBackgroundColor: "#fff",
           label:
             chartListLength === paramCount
-              ? `${event.StationingEnd.toString()}, ${event.Abbr.toLowerCase()}\u25B2`
+              ? `${event.MappedStationingEnd.toString()}, ${event.Abbr.toLowerCase()}\u25B2`
               : "",
           showOnTop: true,
           labelFontColor: "#000",
@@ -187,7 +189,7 @@ async (dataString) => {
           labelWrap: true,
           labelAlign: "near",
           labelAngle: 270,
-          labelFontSize: 14, //10
+          labelFontSize: 10, //14
           labelMaxWidth: 130,
         });
       }
@@ -214,7 +216,7 @@ async (dataString) => {
       labelWrap: false,
       labelAlign: "near",
       labelAngle: 270,
-      labelFontSize: 14, //10
+      labelFontSize: 10, //14
       labelMaxWidth: 130,
       labelWrap: true,
     }));
@@ -285,6 +287,16 @@ async (dataString) => {
           speedZones,
           chartList.length
         );
+        let referenceLine = 0;
+        if (
+          param.id.toLowerCase().indexOf("versine") !== -1 ||
+          param.id.toLowerCase().indexOf("cant") !== -1
+        ) {
+          referenceLine = Math.round((maxY - minY) / 2 + minY);
+        } else if (param.id.toLowerCase().indexOf("gaugedefect") !== -1) {
+          referenceLine = NominalGauge;
+        }
+
         let height =
           ((Math.abs(maxY - minY) / param.scale) * 3.7795275591) / 1.17;
         if (height < 10) {
@@ -294,7 +306,8 @@ async (dataString) => {
           height = 132;
         }
         chartList.push({
-          height: height * 2, //ratio = 1.17 for consistent heights
+          // height: height * 2, //ratio = 1.17 for consistent heights
+          height: height,
           backgroundColor:
             chartList.length % 2 === 0
               ? "rgb(220, 220, 220, 0.5)"
@@ -329,14 +342,23 @@ async (dataString) => {
             minimum: minY - 1,
             labelFormatter: () => "",
             labelAutoFit: true,
-            labelFontSize: 14, //10
+            labelFontSize: 10, //14
             stripLines: [
               {
-                value: 0,
+                value: referenceLine,
                 labelAutoFit: true,
+                labelPlacement: "outside",
                 lineDashType: "solid",
                 color: "#000",
-                label: "",
+                label: referenceLine.toFixed(0),
+                showOnTop: true,
+                labelFontColor: "#000",
+                labelFontFamily: "Roboto",
+                labelWrap: false,
+                labelAlign: "near",
+                labelBackgroundColor: "transparent",
+                labelFontSize: 14,
+                labelMaxWidth: 30,
               },
             ],
           },
@@ -347,7 +369,7 @@ async (dataString) => {
             labelAutoFit: true,
             labelWrap: false,
             labelFontWeight: "lighter",
-            labelFontSize: 13, //9
+            labelFontSize: 9, //13
             interval: 5 * widthRatio,
             labelFormatter:
               chartList.length === paramCount
@@ -355,7 +377,9 @@ async (dataString) => {
                     Number(e.value) > StationingEnd &&
                     Number(e.value) < StationingStart
                       ? ""
-                      : e.value
+                      : StationingLabels.find(
+                          (label) => label.MeasuredStationingPoint === e.value
+                        )?.MappedStationingPoint || ""
                 : () => "",
             labelAngle: 270,
             stripLines: [...eventStripLines, ...speedZoneStripLines],
@@ -386,10 +410,16 @@ async (dataString) => {
         createNewParameterNode(chartParameterIdAttr);
         addLabels(index, param.columnName, param.scale);
         document.querySelector(`#${chartParameterIdAttr}`).style.width = `${
-          PageWidth * 2
+          // PageWidth * 2
+          PageWidth
         }px`;
+        // document.querySelector(`.chartContainer`).style.width = `${
+        //   // PageWidth * 2
+        //   PageWidth * 6
+        // }px`;
         document.querySelector(`#${chartParameterIdAttr}`).style.height = `${
-          height * 2
+          // height * 2
+          height
         }px`;
         const stockChart = new CanvasJS.StockChart(
           `${chartParameterIdAttr}`,
@@ -410,10 +440,16 @@ async (dataString) => {
         .querySelector(".chartContainer:last-of-type .row:first-of-type")
         .classList.add("add-top-border");
     }
+    if (ParameterPerPage > paramCount) {
+      document
+        .querySelector(".chartContainer:last-of-type .row:first-of-type")
+        .classList.add("add-top-border");
+    }
     document.querySelector(".canvasjsChart").style.width = `${
       (PageWidth + 36) * 2
     }px`;
-    // var canvas = await html2canvas(document.querySelector(".canvasjsChart"));
-    // return canvas.toDataURL();
+    var canvas = await html2canvas(document.querySelector(".canvasjsChart"));
+    return canvas.toDataURL();
   }
 };
+chartReport(dataString);
