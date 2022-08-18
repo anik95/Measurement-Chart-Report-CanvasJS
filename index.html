@@ -20,7 +20,7 @@
       }
       .chart {
         overflow: hidden;
-        max-height: 131px; /*92px -> 133px*/
+        max-height: calc(calc(1072px / 6) - 3px); /*131px -> 175px*/
         box-sizing: border-box;
         width: 100%;
       }
@@ -29,8 +29,8 @@
         align-items: center;
         justify-content: flex-start;
         border-top: 1px solid #000;
-        min-height: 134px; /* 1px extra for boder  - 93px -> 134px*/
-        max-height: 134px; /*93px -> 134px*/
+        min-height: calc(1072px / 6); /* 1px extra for boder  - 134 -> 178px*/
+        max-height: calc(1072px / 6); /*134px -> 178px*/
         box-sizing: border-box;
         overflow: hidden;
         background-color: transparent;
@@ -56,7 +56,7 @@
       .chartColumnName {
         position: relative;
         z-index: 1;
-        height: 133px; /*92px -> 133px*/
+        height: calc(calc(1072px / 6) - 1px); /*133px -> 177px*/
         display: flex;
         align-items: center;
         justify-content: center;
@@ -65,9 +65,9 @@
         padding-right: 1px;
       }
       .chartColumnName p {
-        min-width: 133px; /*92px -> 133px*/
-        max-width: 133px; /*92px -> 133px*/
-        font-size: 12px; /*9*/
+        min-width: calc(calc(1072px / 6) - 1px); /*133px -> 177px*/
+        max-width: calc(calc(1072px / 6) - 1px); /*133px -> 177px*/
+        font-size: 14px; /*9*/
         margin: 0;
         transform: rotate(270deg);
         text-align: center;
