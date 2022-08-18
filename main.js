@@ -321,10 +321,13 @@ async (dataString) => {
         } else if (param.id.toLowerCase().indexOf("gaugedefect") !== -1) {
           referenceLine = NominalGauge;
         }
-        let height = (Math.abs(maxY - minY) / param.scale) * 3.78 + 13;
+        let height = Math.round(
+          (Math.abs(maxY - minY) / param.scale) * 3.78 + 13
+        );
         if (height < 10 || height === Infinity) {
           height = 10;
         }
+        console.log("heigth: ", height);
         if (chartList.length === paramCount) {
           height = 133;
         }
