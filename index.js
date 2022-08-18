@@ -23082,7 +23082,7 @@ const chartReport = (dataString) => {
         labelBackgroundColor: "transparent",
         color: "#000",
         label:
-          chartListLength === 7
+          chartListLength === paramCount
             ? `${event.MappedStationingStart.toFixed(
                 0
               )}, ${event.Abbr.toUpperCase()}${event.IsRange ? "\u25BC" : ""}`
@@ -23104,7 +23104,7 @@ const chartReport = (dataString) => {
           color: "#000",
           labelBackgroundColor: "transparent",
           label:
-            chartListLength === 7
+            chartListLength === paramCount
               ? `${event.MappedStationingEnd.toFixed(
                   0
                 )}, ${event.Abbr.toLowerCase()}\u25B2`
@@ -23250,7 +23250,6 @@ const chartReport = (dataString) => {
         if (height < 10 || height === Infinity) {
           height = 10;
         }
-        console.log("heigth: ", height);
         if (chartList.length === paramCount) {
           height = 133;
         }
