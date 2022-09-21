@@ -17,71 +17,73 @@ async (dataString) => {
     TotalParameterCount,
     NominalGauge,
     StationingLabels,
+    LocalizedAttributes,
   } = parsedData;
   const widthRatio = LocalizationScale / 100;
   const chartTypes = [];
+  const { ChartTableAttributes } = LocalizedAttributes;
   const charts = [
     {
       id: "VersineVerticalRight",
-      columnName: "Versine Vertical Right",
+      columnName: ChartTableAttributes.VersineVerticalRight,
     },
     {
       id: "VersineVerticalLeft",
-      columnName: "Versine Vertical Left",
+      columnName: ChartTableAttributes.VersineVerticalLeft,
     },
     {
       id: "VersineHorizontalRight",
-      columnName: "Versine Horizontal Right",
+      columnName: ChartTableAttributes.VersineHorizontalRight,
     },
     {
       id: "VersineHorizontalLeft",
-      columnName: "Versine Horizontal Left",
+      columnName: ChartTableAttributes.VersineHorizontalLeft,
     },
     {
       id: "LongitudinalLevelD2Right",
-      columnName: "Longitudinal Level D2 Right",
+      columnName: ChartTableAttributes.LongitudinalLevelD2Right,
     },
     {
       id: "LongitudinalLevelD2Left",
-      columnName: "Longitudinal Level D2 Left",
+      columnName: ChartTableAttributes.LongitudinalLevelD2Left,
     },
     {
       id: "LongitudinalLevelD1Right",
-      columnName: "Longitudinal Level D1 Right",
+      columnName: ChartTableAttributes.LongitudinalLevelD1Right,
     },
     {
       id: "LongitudinalLevelD1Left",
-      columnName: "Longitudinal Level D1 Left",
+      columnName: ChartTableAttributes.LongitudinalLevelD1Left,
     },
     {
       id: "AlignmentD2Right",
-      columnName: "Alignment D2 Right",
+      columnName: ChartTableAttributes.AlignmentD2Right,
     },
     {
       id: "AlignmentD2Left",
-      columnName: "Alignment D2 Left",
+      columnName: ChartTableAttributes.AlignmentD2Left,
     },
     {
       id: "AlignmentD1Right",
-      columnName: "Alignment D1 Right",
+      columnName: ChartTableAttributes.AlignmentD1Right,
     },
     {
       id: "AlignmentD1Left",
-      columnName: "Alignment D1 Left",
+      columnName: ChartTableAttributes.AlignmentD1Left,
     },
     {
       id: "Cant",
-      columnName: "Cant",
+      columnName: ChartTableAttributes.Cant,
     },
     {
       id: "GaugeDefect",
-      columnName: "Gauge",
+      columnName: ChartTableAttributes.Gauge,
     },
     ...(GaugeChangeBaseLengths.length
       ? GaugeChangeBaseLengths.map((value, index) => {
           return {
             id: `GaugeChange${index + 1}`,
-            columnName: `Gauge Change ${value}m`,
+            columnName: `${ChartTableAttributes.GaugeChange} ${value}m`,
           };
         })
       : []),
@@ -89,7 +91,7 @@ async (dataString) => {
       ? TwistBaseLengths.map((value, index) => {
           return {
             id: `TwistBase${index + 1}`,
-            columnName: `Twist Base ${value}m`,
+            columnName: `${ChartTableAttributes.Twist} ${value}m`,
           };
         })
       : []),
@@ -114,7 +116,7 @@ async (dataString) => {
   }
   chartTypes.push({
     id: "Localizations",
-    columnName: "Localization Information",
+    columnName: `${ChartTableAttributes.Localization} ${ChartTableAttributes.Information}`,
   });
   const chartContainerNode = document.createElement("div");
   chartContainerNode.classList.add("chartContainer");
@@ -161,7 +163,7 @@ async (dataString) => {
         label:
           chartListLength === paramCount
             ? `${event.MappedStationingStart.toFixed(
-                0
+                2
               )}, ${event.Abbr.toUpperCase()}${event.IsRange ? "\u25BC" : ""}`
             : "",
         showOnTop: true,
@@ -183,7 +185,7 @@ async (dataString) => {
           label:
             chartListLength === paramCount
               ? `${event.MappedStationingEnd.toFixed(
-                  0
+                  2
                 )}, ${event.Abbr.toLowerCase()}\u25B2`
               : "",
           showOnTop: true,
