@@ -49881,7 +49881,8 @@ const chartReport = (dataString) => {
       `.${chartContainerClass} .row:nth-of-type(${index + 1}) p`
     );
     if (index === paramCount) {
-      node.innerHTML = "Localisation Information [m]";
+      node.innerHTML = `${ChartTableAttributes.Localization} ${ChartTableAttributes.Information} [m]`;
+
       return;
     }
     node.innerHTML = `${columnName} <br> 1:${scale.toFixed(0)} [mm]`;
