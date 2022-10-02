@@ -184,7 +184,7 @@ const dataString = JSON.stringify({
         {
           Id: "GaugeDefect",
           Name: "GaugeDefect",
-          Value: 13.862644265015156,
+          Value: 130.862644265015156,
           ParameterConfiguration: null,
         },
         {
@@ -49937,6 +49937,10 @@ const chartReport = (dataString) => {
         } else if (param.id.toLowerCase().indexOf("gaugedefect") !== -1) {
           referenceLine = NominalGauge;
         }
+        const amplitudeToPixelAdjustment = 11;
+        const amplitude =
+          (Math.abs(maxY - referenceLine) / param.scale) * 3.78 +
+          amplitudeToPixelAdjustment;
         let height = Math.round(
           (Math.abs(maxY - minY) / param.scale) * 3.78 + 13
         );
@@ -49949,9 +49953,7 @@ const chartReport = (dataString) => {
         chartList.push({
           height: height,
           backgroundColor:
-            chartList.length % 2 === 0
-              ? "rgb(220, 220, 220, 0.5)"
-              : "transparent",
+            chartList.length % 2 === 0 ? "#efefef" : "transparent",
           axisX2: {
             minimum: StationingStart - 1 * widthRatio,
             maximum: StationingEnd + 1 * widthRatio,
@@ -50060,6 +50062,15 @@ const chartReport = (dataString) => {
             stockChart.charts[0].axisY[0].bounds.x2 -
             stockChart.charts[0].axisY[0].bounds.x1
         );
+        if (chartList.length <= paramCount) {
+          const sign = height > 131 ? "-" : "+";
+          const columnHeight = 1071 / 6;
+          document.querySelector(
+            `#${chartParameterIdAttr}`
+          ).style.transform = `translate(0, ${sign}${Math.abs(
+            columnHeight / 2 - amplitude
+          )}px)`;
+        }
         index++;
       }
     }
