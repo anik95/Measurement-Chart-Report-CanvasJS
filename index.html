@@ -17,6 +17,7 @@
         transform: rotate(90deg) translate(0, -100%);
         border: 2px solid black;
         transform-origin: 0 0;
+        position: relative;
       }
       .chart {
         max-height: calc(calc(1072px / 6) - 3px); /*131px -> 175px*/
@@ -27,11 +28,12 @@
         display: flex;
         justify-content: flex-start;
         border-top: 1px solid #000;
-        min-height: calc(1072px / 6); /* 1px extra for boder  - 134 -> 178px*/
+        min-height: calc(1072px / 6); /* 1px extra for border  - 134 -> 178px*/
         max-height: calc(1072px / 6); /*134px -> 178px*/
         box-sizing: border-box;
         overflow: hidden;
         background-color: transparent;
+        position: relative;
       }
       .row:nth-of-type(odd) {
         background-color: #efefef;
@@ -50,6 +52,25 @@
       }
       .row:last-of-type {
         border-bottom: 0;
+      }
+      .row.row-continuous {
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: transparent;
+        min-height: 1072px;
+        pointer-events: none;
+        border: 0;
+      }
+      .row.row-continuous .chart {
+        min-height: 1072px;
+        transform: translate(0, -30px);
+      }
+      .row.row-continuous.speed-zone .chart {
+        transform: translate(0, -80px);
+      }
+      .row.row-continuous .canvasjs-chart-panel {
+        box-shadow: none;
       }
       .chartColumnName {
         position: relative;
