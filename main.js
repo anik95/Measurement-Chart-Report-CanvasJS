@@ -299,8 +299,15 @@ async (dataString) => {
     document.querySelector(`#${contChartParameterIdAttr}`).style.width = `${
       PageWidth - 1
     }px`;
-    document.querySelector(`#${contChartParameterIdAttr}`).style.height =
-      "1072px";
+    document.querySelector(`#${contChartParameterIdAttr}`).style.maxHeight = `${
+      (1072 / 6) * (paramCount + 1)
+    }px`;
+    document.querySelector(`#${contChartParameterIdAttr}`).style.height = `${
+      (1072 / 6) * (paramCount + 1)
+    }px`;
+    document.querySelector(
+      `#${contChartParameterIdAttr}`
+    ).parentNode.style.minHeight = `${(1072 / 6) * (paramCount + 1)}px`;
     return contChartParameterIdAttr;
   };
 
@@ -323,7 +330,7 @@ async (dataString) => {
     const eventStripLines = generateEventStriplines(speedZones);
     const speedZoneStripLines = generateSpeedZoneStripLines(speedZones);
     const contChartData = {
-      height: 1072,
+      height: (1072 / 6) * (paramCount + 1),
       backgroundColor: "transparent",
       axisX2: {
         minimum: StationingStart - 0.2 * widthRatio,
