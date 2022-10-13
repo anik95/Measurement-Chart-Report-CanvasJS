@@ -27,7 +27,7 @@
       .row {
         display: flex;
         justify-content: flex-start;
-        border-top: 1px solid #000;
+        /* border-top: 1px solid #000; */
         min-height: calc(1072px / 6); /* 1px extra for border  - 134 -> 178px*/
         max-height: calc(1072px / 6); /*134px -> 178px*/
         box-sizing: border-box;
@@ -66,6 +66,17 @@
       }
       .row.row-continuous.speed-zone .chart {
         transform: translate(0, -80px);
+      }
+      .row:not(:first-of-type):not(.row-continuous) .chartColumnName:after {
+        content: "";
+        display: block;
+        width: 1000px;
+        position: absolute;
+        top: 0px;
+        left: 0;
+        height: 1px;
+        background: #000;
+        z-index: 1;
       }
       .row.row-continuous .canvasjs-chart-panel {
         box-shadow: none;
