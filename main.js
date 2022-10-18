@@ -20,6 +20,8 @@ async (dataString) => {
     LocalizedAttributes,
   } = parsedData;
   const widthRatio = LocalizationScale / 100;
+  const mmToPixel = 3.78;
+  const minDistanceForOverlapForLines = 20;
   const chartTypes = [];
   const { ChartTableAttributes } = LocalizedAttributes;
   const charts = [
@@ -156,8 +158,20 @@ async (dataString) => {
       (speedZone) => speedZone.value
     );
     const eventStripLines = [];
+    const checkEventSpeedZoneOverlap = (currentEventVal) => {
+      let overlaps = false;
+      speedZoneLocalizations.forEach((speedZone) => {
+        if (
+          getDistanceInPixel(Math.abs(currentEventVal - speedZone)) <
+          minDistanceForOverlapForLines
+        ) {
+          overlaps = true;
+        }
+      });
+      return overlaps;
+    };
     events?.forEach((event) => {
-      if (!speedZoneLocalizations.includes(event.MeasuredStationingStart)) {
+      if (!checkEventSpeedZoneOverlap(event.MeasuredStationingStart)) {
         eventStripLines.push({
           value: event.MeasuredStationingStart,
           labelPlacement: "outside",
@@ -179,7 +193,7 @@ async (dataString) => {
       }
       if (
         event.IsRange &&
-        !speedZoneLocalizations.includes(event.MeasuredStationingEnd)
+        !checkEventSpeedZoneOverlap(event.MeasuredStationingEnd)
       ) {
         eventStripLines.push({
           value: event.MeasuredStationingEnd,
@@ -224,6 +238,10 @@ async (dataString) => {
     }));
   };
 
+  const getDistanceInPixel = (diff) => {
+    return ((diff * 1000) / LocalizationScale) * mmToPixel;
+  };
+
   const generateLabelStripLines = (chartListLength, speedZones) => {
     const speedZoneLocalizations = speedZones.map(
       (speedZone) => speedZone.value
@@ -236,11 +254,28 @@ async (dataString) => {
         eventLocalizations.push(event.MeasuredStationingEnd);
       }
     });
-    filteredStationingLabels = StationingLabels.filter(
-      (label) =>
-        !eventLocalizations.includes(label.MeasuredStationingPoint) &&
-        !speedZoneLocalizations.includes(label.MeasuredStationingPoint)
-    );
+    filteredStationingLabels = StationingLabels.filter((label) => {
+      let overlapsWithEvent = false;
+      let overlapsWithSpeedZone = false;
+      eventLocalizations.forEach((event) => {
+        if (
+          getDistanceInPixel(Math.abs(event - label.MeasuredStationingPoint)) <
+          minDistanceForOverlapForLines
+        ) {
+          overlapsWithEvent = true;
+        }
+      });
+      speedZoneLocalizations.forEach((speedZone) => {
+        if (
+          getDistanceInPixel(
+            Math.abs(speedZone - label.MeasuredStationingPoint)
+          ) < minDistanceForOverlapForLines
+        ) {
+          overlapsWithSpeedZone = true;
+        }
+      });
+      return !(overlapsWithEvent || overlapsWithSpeedZone);
+    });
     return filteredStationingLabels.map((label) => ({
       value: label.MeasuredStationingPoint,
       labelPlacement: "outside",
@@ -389,20 +424,20 @@ async (dataString) => {
       ...contChartData,
       axisX: {
         ...contChartData.axisX,
-        stripLines: [...speedZoneStripLines],
+        stripLines: [
+          ...speedZoneStripLines,
+          ...labelStripLines.map((labelStripLine) => ({
+            ...labelStripLine,
+            labelFormatter: () => "",
+          })),
+        ],
       },
     };
     const continuousChartWithEvents = {
       ...contChartData,
       axisX: {
         ...contChartData.axisX,
-        stripLines: [
-          ...eventStripLines,
-          ...labelStripLines.map((labelStripLine) => ({
-            ...labelStripLine,
-            labelFormatter: () => "",
-          })),
-        ],
+        stripLines: [...eventStripLines],
       },
     };
     const commonOptions = {
@@ -498,10 +533,10 @@ async (dataString) => {
         // }
         const amplitudeToPixelAdjustment = 11;
         const amplitude =
-          (Math.abs(maxY - referenceLine) / param.scale) * 3.78 +
+          (Math.abs(maxY - referenceLine) / param.scale) * mmToPixel +
           amplitudeToPixelAdjustment;
         let height = Math.round(
-          (Math.abs(maxY - minY) / param.scale) * 3.78 + 13
+          (Math.abs(maxY - minY) / param.scale) * mmToPixel + 13
         );
         if (height < 10 || height === Infinity) {
           height = 10;
