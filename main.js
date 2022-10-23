@@ -660,9 +660,15 @@ async (dataString) => {
             stockChart.charts[0].axisY[0].bounds.x2 -
             stockChart.charts[0].axisY[0].bounds.x1
         );
+        const referenceLineInTopHalf = (halfOfColumnHeight) => {
+          return amplitude < halfOfColumnHeight;
+        };
         if (chartList.length <= paramCount) {
-          const sign = height > 131 ? "-" : "+";
           const columnHeight = 1071 / 6;
+          let sign = "+";
+          if (!referenceLineInTopHalf(columnHeight / 2)) {
+            sign = "-";
+          }
           document.querySelector(
             `#${chartParameterIdAttr}`
           ).style.transform = `translate(0, ${sign}${Math.abs(
