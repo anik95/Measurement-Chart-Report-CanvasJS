@@ -64431,6 +64431,9 @@ const chartReport = (dataString) => {
         if (minY === 0) {
           minY = -2;
         }
+        if (maxY === 0) {
+          maxY = 2;
+        }
         const amplitude =
           (Math.abs(maxY - referenceLine) / param.scale) * mmToPixel;
         let height = Math.round(
