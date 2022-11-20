@@ -229,11 +229,10 @@ async (dataString) => {
       labelBackgroundColor: "transparent",
       labelFontColor: "#5a5a5a",
       labelFontFamily: "Calibri",
-      labelWrap: false,
       labelAlign: "near",
       labelAngle: 270,
       labelFontSize: 11,
-      labelMaxWidth: 90,
+      labelMaxWidth: 75,
       labelWrap: true,
     }));
   };
@@ -319,7 +318,10 @@ async (dataString) => {
     );
     if (index === paramCount) {
       node.innerHTML = `${ChartTableAttributes.Localization} ${ChartTableAttributes.Information} [m]`;
-
+      return;
+    }
+    if (columnName.toLowerCase().includes("twist")) {
+      node.innerHTML = `${columnName} <br> 1:${scale.toFixed(0)} [mm/m]`;
       return;
     }
     node.innerHTML = `${columnName} <br> 1:${scale.toFixed(0)} [mm]`;
@@ -513,7 +515,7 @@ async (dataString) => {
     for (const [key, value] of Object.entries(chartData)) {
       const param = chartTypes.find((paramItem) => paramItem.id === key);
       if (param) {
-        const [lineChartDataPoints, minY, maxY] = dataPointGenerator(value);
+        let [lineChartDataPoints, minY, maxY] = dataPointGenerator(value);
         if (!continuousLocalizationPoints.length) {
           continuousLocalizationPoints = lineChartDataPoints.map((point) => ({
             x: point.x,
@@ -528,18 +530,18 @@ async (dataString) => {
         ) {
           referenceLine = Math.round((maxY - minY) / 2 + minY);
         }
-        // else if (param.id.toLowerCase().indexOf("gaugedefect") !== -1) {
-        //   referenceLine = NominalGauge;
-        // }
-        const amplitudeToPixelAdjustment = 11;
+        maxY = Math.max(maxY, 0);
+        minY = Math.min(minY, 0);
+        if (minY === 0) {
+          minY = -2;
+        }
         const amplitude =
-          (Math.abs(maxY - referenceLine) / param.scale) * mmToPixel +
-          amplitudeToPixelAdjustment;
+          (Math.abs(maxY - referenceLine) / param.scale) * mmToPixel;
         let height = Math.round(
           (Math.abs(maxY - minY) / param.scale) * mmToPixel + 13
         );
-        if (height < 10 || height === Infinity) {
-          height = 10;
+        if (height < 20 || height === Infinity) {
+          height = 20;
         }
         if (chartList.length === paramCount) {
           height = 1072 / 6 - 1; //full available height for row
@@ -665,15 +667,24 @@ async (dataString) => {
         };
         if (chartList.length <= paramCount) {
           const columnHeight = 1071 / 6;
-          let sign = "+";
+          let shift = columnHeight / 2 - amplitude;
+          // let sign = "+";
+          let amplitudeToPixelAdjustment = -10;
           if (!referenceLineInTopHalf(columnHeight / 2)) {
-            sign = "-";
+            // sign = "-";
+            if (Math.abs(shift) > columnHeight / 2) {
+              amplitudeToPixelAdjustment = 0;
+            } else {
+              amplitudeToPixelAdjustment = -4;
+            }
+            if (shift > 0) {
+              shift = shift * -1;
+            }
           }
+          shift = shift + amplitudeToPixelAdjustment;
           document.querySelector(
             `#${chartParameterIdAttr}`
-          ).style.transform = `translate(0, ${sign}${Math.abs(
-            columnHeight / 2 - amplitude
-          )}px)`;
+          ).style.transform = `translate(0, ${shift}px)`;
         }
         index++;
       }
