@@ -187,8 +187,8 @@ async (dataString) => {
           labelWrap: true,
           labelAlign: "near",
           labelAngle: 270,
-          labelFontSize: 11,
-          labelMaxWidth: 90,
+          labelFontSize: 10,
+          labelMaxWidth: 95,
         });
       }
       if (
@@ -231,7 +231,7 @@ async (dataString) => {
       labelFontFamily: "Calibri",
       labelAlign: "near",
       labelAngle: 270,
-      labelFontSize: 11,
+      labelFontSize: 10,
       labelMaxWidth: 75,
       labelWrap: true,
     }));
@@ -356,6 +356,7 @@ async (dataString) => {
   ) => {
     const eventIndex = index;
     const speedZoneIndex = index + 1;
+    const localizationLabelIndex = index + 2;
     const contChartParameterIdAttrEvent = generateContinuousRow(
       eventIndex,
       "event"
@@ -363,6 +364,10 @@ async (dataString) => {
     const contChartParameterIdAttrSpeedZone = generateContinuousRow(
       speedZoneIndex,
       "speed-zone"
+    );
+    const contChartParameterIdAttrLocalizationLabel = generateContinuousRow(
+      localizationLabelIndex,
+      "localization-label"
     );
     const eventStripLines = generateEventStriplines(speedZones);
     const speedZoneStripLines = generateSpeedZoneStripLines(speedZones);
@@ -426,13 +431,7 @@ async (dataString) => {
       ...contChartData,
       axisX: {
         ...contChartData.axisX,
-        stripLines: [
-          ...speedZoneStripLines,
-          ...labelStripLines.map((labelStripLine) => ({
-            ...labelStripLine,
-            labelFormatter: () => "",
-          })),
-        ],
+        stripLines: [...speedZoneStripLines],
       },
     };
     const continuousChartWithEvents = {
@@ -440,6 +439,13 @@ async (dataString) => {
       axisX: {
         ...contChartData.axisX,
         stripLines: [...eventStripLines],
+      },
+    };
+    const continuousChartWithLocalizationLabels = {
+      ...contChartData,
+      axisX: {
+        ...contChartData.axisX,
+        stripLines: [...labelStripLines],
       },
     };
     const commonOptions = {
@@ -460,6 +466,10 @@ async (dataString) => {
       ...commonOptions,
       charts: [continuousChartWithSpeedZones],
     };
+    const continuousChartOptionsWithLocalizationLabels = {
+      ...commonOptions,
+      charts: [continuousChartWithLocalizationLabels],
+    };
     //render events stockchart
     const contStockChartEvents = new CanvasJS.StockChart(
       `${contChartParameterIdAttrEvent}`,
@@ -478,6 +488,12 @@ async (dataString) => {
       continuousChartOptionsWithSpeedZones
     );
     contStockChartSpeedZones.render();
+    //render localization labels stock chart
+    const contStockChartLocalizationLabels = new CanvasJS.StockChart(
+      `${contChartParameterIdAttrLocalizationLabel}`,
+      continuousChartOptionsWithLocalizationLabels
+    );
+    contStockChartLocalizationLabels.render();
   };
 
   const newChartData = {};
@@ -614,7 +630,6 @@ async (dataString) => {
             labelFontSize: 10,
             labelFormatter: () => "",
             labelAngle: 270,
-            stripLines: [...labelStripLines],
             ...(index === paramCount
               ? {
                   gridThickness: 0,
@@ -671,10 +686,8 @@ async (dataString) => {
         if (chartList.length <= paramCount) {
           const columnHeight = 1071 / 6;
           let shift = columnHeight / 2 - amplitude;
-          // let sign = "+";
           let amplitudeToPixelAdjustment = -10;
           if (!referenceLineInTopHalf(columnHeight / 2)) {
-            // sign = "-";
             if (Math.abs(shift) > columnHeight / 2) {
               amplitudeToPixelAdjustment = 0;
             } else {

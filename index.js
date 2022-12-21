@@ -63889,7 +63889,48 @@ const dataString = JSON.stringify({
       MinSpeedDisplayValue: "80",
     },
   ],
-  EventInformations: [],
+  EventInformations: [
+    {
+      TrackEventID: "a065098c-4e07-41b5-8390-55be8d50c713",
+      MeasuredStationingStart: 30.02,
+      MeasuredStationingEnd: 37.1,
+      MappedStationingStart: 10333.02,
+      MappedStationingEnd: 10337.1,
+      Comment: "",
+      TypeId: "D-TRBP",
+      Name: "Trackbed Problem",
+      Abbr: "D-TRBP",
+      Group: "Damage&Defect",
+      IsRange: true,
+      PositionsMask: 7,
+      TimestampHWStart: 2468365,
+      TimestampHWEnd: 2611051,
+      DateCreated: "2022-10-28T07:12:13Z",
+      DateModified: "2022-10-28T07:12:13Z",
+      DocumentCount: 0,
+      ImageCount: 0,
+    },
+    // {
+    //   TrackEventID: "07c11759-7341-4292-bdab-ca01ae21d69e",
+    //   MeasuredStationingStart: 473.93,
+    //   MeasuredStationingEnd: 473.93,
+    //   MappedStationingStart: 10473.93,
+    //   MappedStationingEnd: 10473.93,
+    //   Comment: "",
+    //   TypeId: "D-FAST",
+    //   Name: "Defect Fastening",
+    //   Abbr: "D-FAST",
+    //   Group: "Damage&Defect",
+    //   IsRange: false,
+    //   PositionsMask: 6,
+    //   TimestampHWStart: 2955390,
+    //   TimestampHWEnd: 2955390,
+    //   DateCreated: "2022-10-28T07:17:58Z",
+    //   DateModified: "2022-10-28T07:17:58Z",
+    //   DocumentCount: 0,
+    //   ImageCount: 0,
+    // },
+  ],
   StationingStartDisplayValue: "0.00",
   StationingEndDisplayValue: "60.00",
 });
@@ -64083,8 +64124,8 @@ const chartReport = (dataString) => {
           labelWrap: true,
           labelAlign: "near",
           labelAngle: 270,
-          labelFontSize: 11,
-          labelMaxWidth: 90,
+          labelFontSize: 10,
+          labelMaxWidth: 95,
         });
       }
       if (
@@ -64127,7 +64168,7 @@ const chartReport = (dataString) => {
       labelFontFamily: "Calibri",
       labelAlign: "near",
       labelAngle: 270,
-      labelFontSize: 11,
+      labelFontSize: 10,
       labelMaxWidth: 75,
       labelWrap: true,
     }));
@@ -64252,6 +64293,7 @@ const chartReport = (dataString) => {
   ) => {
     const eventIndex = index;
     const speedZoneIndex = index + 1;
+    const localizationLabelIndex = index + 2;
     const contChartParameterIdAttrEvent = generateContinuousRow(
       eventIndex,
       "event"
@@ -64259,6 +64301,10 @@ const chartReport = (dataString) => {
     const contChartParameterIdAttrSpeedZone = generateContinuousRow(
       speedZoneIndex,
       "speed-zone"
+    );
+    const contChartParameterIdAttrLocalizationLabel = generateContinuousRow(
+      localizationLabelIndex,
+      "localization-label"
     );
     const eventStripLines = generateEventStriplines(speedZones);
     const speedZoneStripLines = generateSpeedZoneStripLines(speedZones);
@@ -64322,13 +64368,7 @@ const chartReport = (dataString) => {
       ...contChartData,
       axisX: {
         ...contChartData.axisX,
-        stripLines: [
-          ...speedZoneStripLines,
-          ...labelStripLines.map((labelStripLine) => ({
-            ...labelStripLine,
-            labelFormatter: () => "",
-          })),
-        ],
+        stripLines: [...speedZoneStripLines],
       },
     };
     const continuousChartWithEvents = {
@@ -64336,6 +64376,13 @@ const chartReport = (dataString) => {
       axisX: {
         ...contChartData.axisX,
         stripLines: [...eventStripLines],
+      },
+    };
+    const continuousChartWithLocalizationLabels = {
+      ...contChartData,
+      axisX: {
+        ...contChartData.axisX,
+        stripLines: [...labelStripLines],
       },
     };
     const commonOptions = {
@@ -64356,6 +64403,10 @@ const chartReport = (dataString) => {
       ...commonOptions,
       charts: [continuousChartWithSpeedZones],
     };
+    const continuousChartOptionsWithLocalizationLabels = {
+      ...commonOptions,
+      charts: [continuousChartWithLocalizationLabels],
+    };
     //render events stockchart
     const contStockChartEvents = new CanvasJS.StockChart(
       `${contChartParameterIdAttrEvent}`,
@@ -64374,6 +64425,12 @@ const chartReport = (dataString) => {
       continuousChartOptionsWithSpeedZones
     );
     contStockChartSpeedZones.render();
+    //render localization labels stock chart
+    const contStockChartLocalizationLabels = new CanvasJS.StockChart(
+      `${contChartParameterIdAttrLocalizationLabel}`,
+      continuousChartOptionsWithLocalizationLabels
+    );
+    contStockChartLocalizationLabels.render();
   };
 
   const newChartData = {};
@@ -64510,7 +64567,6 @@ const chartReport = (dataString) => {
             labelFontSize: 10,
             labelFormatter: () => "",
             labelAngle: 270,
-            stripLines: [...labelStripLines],
             ...(index === paramCount
               ? {
                   gridThickness: 0,
@@ -64567,10 +64623,8 @@ const chartReport = (dataString) => {
         if (chartList.length <= paramCount) {
           const columnHeight = 1071 / 6;
           let shift = columnHeight / 2 - amplitude;
-          // let sign = "+";
           let amplitudeToPixelAdjustment = -10;
           if (!referenceLineInTopHalf(columnHeight / 2)) {
-            // sign = "-";
             if (Math.abs(shift) > columnHeight / 2) {
               amplitudeToPixelAdjustment = 0;
             } else {
