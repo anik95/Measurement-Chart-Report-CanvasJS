@@ -64147,7 +64147,7 @@ const chartReport = (dataString) => {
           labelWrap: true,
           labelAlign: "near",
           labelAngle: 270,
-          labelFontSize: 11,
+          labelFontSize: 10,
           labelMaxWidth: 90,
         });
       }
