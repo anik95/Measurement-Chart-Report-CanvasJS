@@ -15,12 +15,13 @@ async (dataString) => {
     LocalizationScale,
     BaseLengths: { GaugeChangeBaseLengths, TwistBaseLengths },
     TotalParameterCount,
-    NominalGauge,
+    ConvertedNominalGauge,
     StationingLabels,
     LocalizedAttributes,
+    HeaderTableUnitAttributes,
   } = parsedData;
   const widthRatio = LocalizationScale / 100;
-  const mmToPixel = 3.78;
+  const mToPixel = 3.78 * 1000;
   const minDistanceForOverlapForLines = 20;
   const chartTypes = [];
   const { ChartTableAttributes } = LocalizedAttributes;
@@ -28,64 +29,79 @@ async (dataString) => {
     {
       id: "VersineVerticalRight",
       columnName: ChartTableAttributes.VersineVerticalRight,
+      unit: HeaderTableUnitAttributes["VersineVerticalRight"],
     },
     {
       id: "VersineVerticalLeft",
       columnName: ChartTableAttributes.VersineVerticalLeft,
+      unit: HeaderTableUnitAttributes["VersineVerticalLeft"],
     },
     {
       id: "VersineHorizontalRight",
       columnName: ChartTableAttributes.VersineHorizontalRight,
+      unit: HeaderTableUnitAttributes["VersineHorizontalRight"],
     },
     {
       id: "VersineHorizontalLeft",
       columnName: ChartTableAttributes.VersineHorizontalLeft,
+      unit: HeaderTableUnitAttributes["VersineHorizontalLeft"],
     },
     {
       id: "LongitudinalLevelD2Right",
       columnName: ChartTableAttributes.LongitudinalLevelD2Right,
+      unit: HeaderTableUnitAttributes["LongitudinalLevelD2Right"],
     },
     {
       id: "LongitudinalLevelD2Left",
       columnName: ChartTableAttributes.LongitudinalLevelD2Left,
+      unit: HeaderTableUnitAttributes["LongitudinalLevelD2Left"],
     },
     {
       id: "LongitudinalLevelD1Right",
       columnName: ChartTableAttributes.LongitudinalLevelD1Right,
+      unit: HeaderTableUnitAttributes["LongitudinalLevelD1Right"],
     },
     {
       id: "LongitudinalLevelD1Left",
       columnName: ChartTableAttributes.LongitudinalLevelD1Left,
+      unit: HeaderTableUnitAttributes["LongitudinalLevelD1Left"],
     },
     {
       id: "AlignmentD2Right",
       columnName: ChartTableAttributes.AlignmentD2Right,
+      unit: HeaderTableUnitAttributes["AlignmentD2Right"],
     },
     {
       id: "AlignmentD2Left",
       columnName: ChartTableAttributes.AlignmentD2Left,
+      unit: HeaderTableUnitAttributes["AlignmentD2Left"],
     },
     {
       id: "AlignmentD1Right",
       columnName: ChartTableAttributes.AlignmentD1Right,
+      unit: HeaderTableUnitAttributes["AlignmentD1Right"],
     },
     {
       id: "AlignmentD1Left",
       columnName: ChartTableAttributes.AlignmentD1Left,
+      unit: HeaderTableUnitAttributes["AlignmentD1Left"],
     },
     {
       id: "Cant",
       columnName: ChartTableAttributes.Cant,
+      unit: HeaderTableUnitAttributes["Cant"],
     },
     {
       id: "GaugeDefect",
       columnName: ChartTableAttributes.Gauge,
+      unit: HeaderTableUnitAttributes["GaugeDefect"],
     },
     ...(GaugeChangeBaseLengths.length
       ? GaugeChangeBaseLengths.map((value, index) => {
           return {
             id: `GaugeChange${index + 1}`,
-            columnName: `${ChartTableAttributes.GaugeChange} ${value}m`,
+            columnName: `${ChartTableAttributes.GaugeChange} ${value}${HeaderTableUnitAttributes["GaugeDefect"]}`,
+            unit: HeaderTableUnitAttributes["GaugeDefect"],
           };
         })
       : []),
@@ -93,7 +109,8 @@ async (dataString) => {
       ? TwistBaseLengths.map((value, index) => {
           return {
             id: `TwistBase${index + 1}`,
-            columnName: `${ChartTableAttributes.Twist} ${value}m`,
+            columnName: `${ChartTableAttributes.Twist} ${value}${HeaderTableUnitAttributes["TwistBaseLength"]}`,
+            unit: HeaderTableUnitAttributes["Twist"],
           };
         })
       : []),
@@ -119,6 +136,7 @@ async (dataString) => {
   chartTypes.push({
     id: "Localizations",
     columnName: `${ChartTableAttributes.Localization} ${ChartTableAttributes.Information}`,
+    unit: HeaderTableUnitAttributes["LocalizationInformation"],
   });
   const chartContainerNode = document.createElement("div");
   chartContainerNode.classList.add("chartContainer");
@@ -178,9 +196,9 @@ async (dataString) => {
           lineDashType: "longDash",
           labelBackgroundColor: "transparent",
           color: "#000",
-          label: `${event.MappedStationingStart.toFixed(
-            2
-          )}, ${event.Abbr.toUpperCase()}${event.IsRange ? "\u25BC" : ""}`,
+          label: `${
+            event.ConvertedMappedStationingStart
+          }, ${event.Abbr.toUpperCase()}${event.IsRange ? "\u25BC" : ""}`,
           showOnTop: true,
           labelFontColor: "#000",
           labelFontFamily: "Calibri",
@@ -201,9 +219,9 @@ async (dataString) => {
           lineDashType: "longDash",
           color: "#000",
           labelBackgroundColor: "transparent",
-          label: `${event.MappedStationingEnd.toFixed(
-            2
-          )}, ${event.Abbr.toLowerCase()}\u25B2`,
+          label: `${
+            event.ConvertedMappedStationingEnd
+          }, ${event.Abbr.toLowerCase()}\u25B2`,
           showOnTop: true,
           labelFontColor: "#000",
           labelFontFamily: "Calibri",
@@ -224,7 +242,7 @@ async (dataString) => {
       labelPlacement: "outside",
       lineDashType: "longDashDot",
       color: "#000",
-      label: `${limit.MinSpeed}<V<=${limit.MaxSpeed} \u25BC`,
+      label: `${limit.ConvertedMinSpeedLimit}<V<=${limit.ConvertedMaxSpeedLimit} \u25BC`,
       showOnTop: true,
       labelBackgroundColor: "transparent",
       labelFontColor: "#5a5a5a",
@@ -238,7 +256,7 @@ async (dataString) => {
   };
 
   const getDistanceInPixel = (diff) => {
-    return ((diff * 1000) / LocalizationScale) * mmToPixel;
+    return (diff / LocalizationScale) * mToPixel;
   };
 
   const generateLabelStripLines = (chartListLength, speedZones) => {
@@ -281,7 +299,9 @@ async (dataString) => {
       lineDashType: "dot",
       color: "#000",
       label:
-        chartListLength === paramCount ? `${label.MappedStationingPoint}` : "",
+        chartListLength === paramCount
+          ? `${label.ConvertedMappedStationingPoint}`
+          : "",
       showOnTop: true,
       labelBackgroundColor: "transparent",
       labelFontColor: "#000",
@@ -312,19 +332,17 @@ async (dataString) => {
     document.querySelector(`.${chartContainerClass}`).append(rowNode);
   };
 
-  const addLabels = (index, columnName, scale) => {
+  const addLabels = (index, param) => {
     const node = document.querySelector(
       `.${chartContainerClass} .row:nth-of-type(${index + 1}) p`
     );
     if (index === paramCount) {
-      node.innerHTML = `${ChartTableAttributes.Localization} ${ChartTableAttributes.Information} [m]`;
+      node.innerHTML = `${ChartTableAttributes.Localization} ${ChartTableAttributes.Information} [${param.unit}]`;
       return;
     }
-    if (columnName.toLowerCase().includes("twist")) {
-      node.innerHTML = `${columnName} <br> 1:${scale.toFixed(0)} [mm/m]`;
-      return;
-    }
-    node.innerHTML = `${columnName} <br> 1:${scale.toFixed(0)} [mm]`;
+    node.innerHTML = `${param.columnName} <br> 1:${param.scale.toFixed(0)} [${
+      param.unit
+    }]`;
   };
 
   const generateContinuousRow = (rowNum, className) => {
@@ -525,6 +543,8 @@ async (dataString) => {
       value: speedElement.MeasuredStationingStart,
       MinSpeed: speedElement.MinSpeedDisplayValue,
       MaxSpeed: speedElement.MaxSpeedDisplayValue,
+      ConvertedMinSpeedLimit: speedElement.ConvertedMinSpeedLimit,
+      ConvertedMaxSpeedLimit: speedElement.ConvertedMaxSpeedLimit,
     }));
     let labelStripLines = [];
     let continuousLocalizationPoints = [];
@@ -549,15 +569,15 @@ async (dataString) => {
         maxY = Math.max(maxY, 0);
         minY = Math.min(minY, 0);
         if (minY === 0) {
-          minY = -2;
+          minY = -0.002;
         }
         if (maxY === 0) {
-          maxY = 2;
+          maxY = 0.002;
         }
         const amplitude =
-          (Math.abs(maxY - referenceLine) / param.scale) * mmToPixel;
+          (Math.abs(maxY - referenceLine) / param.scale) * mToPixel;
         let height = Math.round(
-          (Math.abs(maxY - minY) / param.scale) * mmToPixel + 13
+          (Math.abs(maxY - minY) / param.scale) * mToPixel + 13
         );
         if (height < 20 || height === Infinity) {
           height = 20;
@@ -593,8 +613,8 @@ async (dataString) => {
             lineThickness: 0,
             gridThickness: 0,
             tickLength: 0,
-            maximum: maxY + 1,
-            minimum: minY - 1,
+            maximum: maxY + 0.001,
+            minimum: minY - 0.001,
             labelFormatter: () => "",
             labelAutoFit: true,
             labelFontSize: 11,
@@ -607,7 +627,7 @@ async (dataString) => {
                 color: "#000",
                 label:
                   param.id.toLowerCase().indexOf("gaugedefect") !== -1
-                    ? NominalGauge
+                    ? ConvertedNominalGauge
                     : referenceLine.toFixed(0),
                 showOnTop: true,
                 labelFontColor: "#000",
@@ -662,7 +682,7 @@ async (dataString) => {
         };
         const chartParameterIdAttr = `chart-${ChartIndex}${index + 1}`;
         createNewParameterNode(chartParameterIdAttr);
-        addLabels(index, param.columnName, param.scale);
+        addLabels(index, param);
         document.querySelector(`#${chartParameterIdAttr}`).style.width = `${
           PageWidth - 1
         }px`;
