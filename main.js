@@ -100,7 +100,7 @@ async (dataString) => {
       ? GaugeChangeBaseLengths.map((value, index) => {
           return {
             id: `GaugeChange${index + 1}`,
-            columnName: `${ChartTableAttributes.GaugeChange} ${value}${HeaderTableUnitAttributes["GaugeDefect"]}`,
+            columnName: `${ChartTableAttributes.GaugeChange} ${value}${HeaderTableUnitAttributes["BaseLength"]}`,
             unit: HeaderTableUnitAttributes["GaugeDefect"],
           };
         })
@@ -109,7 +109,7 @@ async (dataString) => {
       ? TwistBaseLengths.map((value, index) => {
           return {
             id: `TwistBase${index + 1}`,
-            columnName: `${ChartTableAttributes.Twist} ${value}${HeaderTableUnitAttributes["TwistBaseLength"]}`,
+            columnName: `${ChartTableAttributes.Twist} ${value}${HeaderTableUnitAttributes["BaseLength"]}`,
             unit: HeaderTableUnitAttributes["Twist"],
           };
         })
