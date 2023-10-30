@@ -15,7 +15,7 @@ async (dataString) => {
     LocalizationScale,
     BaseLengths: { GaugeChangeBaseLengths, TwistBaseLengths },
     TotalParameterCount,
-    ConvertedNominalGauge,
+    NominalGauge,
     StationingLabels,
     LocalizedAttributes,
     HeaderTableUnitAttributes,
@@ -100,7 +100,7 @@ async (dataString) => {
       ? GaugeChangeBaseLengths.map((value, index) => {
           return {
             id: `GaugeChange${index + 1}`,
-            columnName: `${ChartTableAttributes.GaugeChange} ${value}${HeaderTableUnitAttributes["BaseLength"]}`,
+            columnName: `${ChartTableAttributes.GaugeChange} ${value.ReportValue} ${HeaderTableUnitAttributes["BaseLength"]}`,
             unit: HeaderTableUnitAttributes["GaugeDefect"],
           };
         })
@@ -109,7 +109,7 @@ async (dataString) => {
       ? TwistBaseLengths.map((value, index) => {
           return {
             id: `TwistBase${index + 1}`,
-            columnName: `${ChartTableAttributes.Twist} ${value}${HeaderTableUnitAttributes["BaseLength"]}`,
+            columnName: `${ChartTableAttributes.Twist} ${value.ReportValue} ${HeaderTableUnitAttributes["BaseLength"]}`,
             unit: HeaderTableUnitAttributes["Twist"],
           };
         })
@@ -140,7 +140,8 @@ async (dataString) => {
   });
   const chartContainerNode = document.createElement("div");
   chartContainerNode.classList.add("chartContainer");
-  const chartContainerClass = "chartContainer" + StationingStart.toFixed(0);
+  const chartContainerClass =
+    "chartContainer" + StationingStart.OriginalValue.toFixed(0);
   chartContainerNode.classList.add(chartContainerClass);
   const chartContainerWrapper = document.createElement("div");
   chartContainerWrapper.classList.add("chartContainerWrapper");
@@ -189,15 +190,17 @@ async (dataString) => {
       return overlaps;
     };
     events?.forEach((event) => {
-      if (!checkEventSpeedZoneOverlap(event.MeasuredStationingStart)) {
+      if (
+        !checkEventSpeedZoneOverlap(event.MeasuredStationingStart.OriginalValue)
+      ) {
         eventStripLines.push({
-          value: event.MeasuredStationingStart,
+          value: event.MeasuredStationingStart.OriginalValue,
           labelPlacement: "outside",
           lineDashType: "longDash",
           labelBackgroundColor: "transparent",
           color: "#000",
           label: `${
-            event.ConvertedMappedStationingStart
+            event.MappedStationingStart.FormattedReportValue
           }, ${event.Abbr.toUpperCase()}${event.IsRange ? "\u25BC" : ""}`,
           showOnTop: true,
           labelFontColor: "#000",
@@ -211,16 +214,16 @@ async (dataString) => {
       }
       if (
         event.IsRange &&
-        !checkEventSpeedZoneOverlap(event.MeasuredStationingEnd)
+        !checkEventSpeedZoneOverlap(event.MeasuredStationingEnd.OriginalValue)
       ) {
         eventStripLines.push({
-          value: event.MeasuredStationingEnd,
+          value: event.MeasuredStationingEnd.OriginalValue,
           labelPlacement: "outside",
           lineDashType: "longDash",
           color: "#000",
           labelBackgroundColor: "transparent",
           label: `${
-            event.ConvertedMappedStationingEnd
+            event.MappedStationingEnd.FormattedReportValue
           }, ${event.Abbr.toLowerCase()}\u25B2`,
           showOnTop: true,
           labelFontColor: "#000",
@@ -266,9 +269,9 @@ async (dataString) => {
     const eventLocalizations = [];
     let filteredStationingLabels = [...StationingLabels];
     events.forEach((event) => {
-      eventLocalizations.push(event.MeasuredStationingStart);
+      eventLocalizations.push(event.MeasuredStationingStart.OriginalValue);
       if (event.IsRange) {
-        eventLocalizations.push(event.MeasuredStationingEnd);
+        eventLocalizations.push(event.MeasuredStationingEnd.OriginalValue);
       }
     });
     filteredStationingLabels = StationingLabels.filter((label) => {
@@ -276,8 +279,9 @@ async (dataString) => {
       let overlapsWithSpeedZone = false;
       eventLocalizations.forEach((event) => {
         if (
-          getDistanceInPixel(Math.abs(event - label.MeasuredStationingPoint)) <
-          minDistanceForOverlapForLines
+          getDistanceInPixel(
+            Math.abs(event - label.MeasuredStationingPoint.OriginalValue)
+          ) < minDistanceForOverlapForLines
         ) {
           overlapsWithEvent = true;
         }
@@ -285,7 +289,7 @@ async (dataString) => {
       speedZoneLocalizations.forEach((speedZone) => {
         if (
           getDistanceInPixel(
-            Math.abs(speedZone - label.MeasuredStationingPoint)
+            Math.abs(speedZone - label.MeasuredStationingPoint.OriginalValue)
           ) < minDistanceForOverlapForLines
         ) {
           overlapsWithSpeedZone = true;
@@ -294,13 +298,13 @@ async (dataString) => {
       return !(overlapsWithEvent || overlapsWithSpeedZone);
     });
     return filteredStationingLabels.map((label) => ({
-      value: label.MeasuredStationingPoint,
+      value: label.MeasuredStationingPoint.OriginalValue,
       labelPlacement: "outside",
       lineDashType: "dot",
       color: "#000",
       label:
         chartListLength === paramCount
-          ? `${label.ConvertedMappedStationingPoint}`
+          ? `${label.MappedStationingPoint.FormattedReportValue}`
           : "",
       showOnTop: true,
       labelBackgroundColor: "transparent",
@@ -393,8 +397,8 @@ async (dataString) => {
       height: (1072 / 6) * (paramCount + 1),
       backgroundColor: "transparent",
       axisX2: {
-        minimum: StationingStart - 0.2 * widthRatio,
-        maximum: StationingEnd + 0.2 * widthRatio,
+        minimum: StationingStart.OriginalValue - 0.2 * widthRatio,
+        maximum: StationingEnd.OriginalValue + 0.2 * widthRatio,
         lineThickness: 0,
         gridThickness: 0,
         tickLength: 0,
@@ -421,8 +425,8 @@ async (dataString) => {
         labelFontSize: 11,
       },
       axisX: {
-        minimum: StationingStart - 0.2 * widthRatio,
-        maximum: StationingEnd + 0.2 * widthRatio,
+        minimum: StationingStart.OriginalValue - 0.2 * widthRatio,
+        maximum: StationingEnd.OriginalValue + 0.2 * widthRatio,
         tickLength: 0,
         labelAutoFit: true,
         labelWrap: false,
@@ -521,8 +525,8 @@ async (dataString) => {
       row.ParameterValues.forEach((cell) => {
         if (!newChartData[cell.Id]) newChartData[cell.Id] = [];
         newChartData[cell.Id].push({
-          x: row.Stationing.Value,
-          y: cell.Value,
+          x: row.StationingMeasured.Value.OriginalValue,
+          y: cell.Value.OriginalValue,
         });
       });
     });
@@ -540,11 +544,11 @@ async (dataString) => {
     let index = 0;
     const chartList = [];
     const speedZones = ModifiedSpeedElements.map((speedElement) => ({
-      value: speedElement.MeasuredStationingStart,
-      MinSpeed: speedElement.MinSpeedDisplayValue,
-      MaxSpeed: speedElement.MaxSpeedDisplayValue,
-      ConvertedMinSpeedLimit: speedElement.ConvertedMinSpeedLimit,
-      ConvertedMaxSpeedLimit: speedElement.ConvertedMaxSpeedLimit,
+      value: speedElement.MeasuredStationingStart.OriginalValue,
+      MinSpeed: speedElement.MinSpeedLimit.OriginalValue,
+      MaxSpeed: speedElement.MaxSpeedLimit.OriginalValue,
+      ConvertedMinSpeedLimit: speedElement.MinSpeedLimit.FormattedReportValue,
+      ConvertedMaxSpeedLimit: speedElement.MaxSpeedLimit.FormattedReportValue,
     }));
     let labelStripLines = [];
     let continuousLocalizationPoints = [];
@@ -590,8 +594,8 @@ async (dataString) => {
           backgroundColor:
             chartList.length % 2 === 0 ? "#efefef" : "transparent",
           axisX2: {
-            minimum: StationingStart - 0.2 * widthRatio,
-            maximum: StationingEnd + 0.2 * widthRatio,
+            minimum: StationingStart.OriginalValue - 0.2 * widthRatio,
+            maximum: StationingEnd.OriginalValue + 0.2 * widthRatio,
             lineThickness: 0,
             gridThickness: 0,
             tickLength: 0,
@@ -627,7 +631,7 @@ async (dataString) => {
                 color: "#000",
                 label:
                   param.id.toLowerCase().indexOf("gaugedefect") !== -1
-                    ? ConvertedNominalGauge
+                    ? NominalGauge.ReportValue
                     : referenceLine.toFixed(0),
                 showOnTop: true,
                 labelFontColor: "#000",
@@ -641,8 +645,8 @@ async (dataString) => {
             ],
           },
           axisX: {
-            minimum: StationingStart - 0.2 * widthRatio,
-            maximum: StationingEnd + 0.2 * widthRatio,
+            minimum: StationingStart.OriginalValue - 0.2 * widthRatio,
+            maximum: StationingEnd.OriginalValue + 0.2 * widthRatio,
             tickLength: 0,
             labelAutoFit: true,
             labelWrap: false,
