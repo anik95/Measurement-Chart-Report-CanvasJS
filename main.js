@@ -746,5 +746,8 @@ async (dataString) => {
     document.querySelector(
       `.${chartContainerClass}`
     ).parentNode.style.maxHeight = `${PageWidth + 38 + 4}px`;
+    document.querySelector(
+      `.${chartContainerClass}`
+    ).parentNode.style.height = `${PageWidth + 38 + 4}px`;
   }
 };
