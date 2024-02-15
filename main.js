@@ -100,7 +100,7 @@ async (dataString) => {
       ? GaugeChangeBaseLengths.map((value, index) => {
           return {
             id: `GaugeChange${index + 1}`,
-            columnName: `${ChartTableAttributes.GaugeChange} ${value.ReportValue} ${HeaderTableUnitAttributes["BaseLength"]}`,
+            columnName: `${ChartTableAttributes.GaugeChange} ${value.FormattedReportValue} ${HeaderTableUnitAttributes["BaseLength"]}`,
             unit: HeaderTableUnitAttributes["GaugeDefect"],
           };
         })
