@@ -109,7 +109,7 @@ async (dataString) => {
       ? TwistBaseLengths.map((value, index) => {
           return {
             id: `TwistBase${index + 1}`,
-            columnName: `${ChartTableAttributes.Twist} ${value.ReportValue} ${HeaderTableUnitAttributes["BaseLength"]}`,
+            columnName: `${ChartTableAttributes.Twist} ${value.FormattedReportValue} ${HeaderTableUnitAttributes["BaseLength"]}`,
             unit: HeaderTableUnitAttributes["Twist"],
           };
         })

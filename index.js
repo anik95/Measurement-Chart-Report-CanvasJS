@@ -107,7 +107,7 @@ const dataString = JSON.stringify({
   ],
   TotalParameterCount: 16,
   ParameterPerPage: 5,
-  ParameterBlockIndex: 3,
+  ParameterBlockIndex: 0,
   ChartIndex: 4,
   PageWidth: 519,
   NominalGauge: {
@@ -119359,7 +119359,7 @@ const chartReport = (dataString) => {
       ? TwistBaseLengths.map((value, index) => {
           return {
             id: `TwistBase${index + 1}`,
-            columnName: `${ChartTableAttributes.Twist} ${value.ReportValue} ${HeaderTableUnitAttributes["BaseLength"]}`,
+            columnName: `${ChartTableAttributes.Twist} ${value.FormattedReportValue} ${HeaderTableUnitAttributes["BaseLength"]}`,
             unit: HeaderTableUnitAttributes["Twist"],
           };
         })
