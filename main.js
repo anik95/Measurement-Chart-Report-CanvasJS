@@ -19,6 +19,7 @@ async (dataString) => {
     StationingLabels,
     LocalizedAttributes,
     HeaderTableUnitAttributes,
+    PauseRecords,
   } = parsedData;
   const widthRatio = LocalizationScale / 100;
   const mToPixel = 3.78 * 1000;
@@ -235,6 +236,40 @@ async (dataString) => {
           labelMaxWidth: 90,
         });
       }
+    });
+    PauseRecords.forEach((pauseRecord) => {
+      eventStripLines.push({
+        value: pauseRecord.StationingStart.OriginalValue,
+        labelPlacement: "outside",
+        lineDashType: "longDash",
+        labelBackgroundColor: "transparent",
+        color: "#000",
+        label: `${pauseRecord.StationingStart.FormattedReportValue}, PAU`,
+        showOnTop: true,
+        labelFontColor: "#000",
+        labelFontFamily: "Calibri",
+        labelWrap: true,
+        labelAlign: "near",
+        labelAngle: 270,
+        labelFontSize: 10,
+        labelMaxWidth: 95,
+      });
+      eventStripLines.push({
+        value: pauseRecord.StationingEnd.OriginalValue,
+        labelPlacement: "outside",
+        lineDashType: "longDash",
+        color: "#000",
+        labelBackgroundColor: "transparent",
+        label: `${pauseRecord.StationingStart.FormattedReportValue}, RES`,
+        showOnTop: true,
+        labelFontColor: "#000",
+        labelFontFamily: "Calibri",
+        labelWrap: true,
+        labelAlign: "near",
+        labelAngle: 270,
+        labelFontSize: 10,
+        labelMaxWidth: 95,
+      });
     });
     return eventStripLines;
   };
@@ -460,7 +495,16 @@ async (dataString) => {
       ...contChartData,
       axisX: {
         ...contChartData.axisX,
-        stripLines: [...eventStripLines],
+        stripLines: [
+          ...eventStripLines,
+          ...PauseRecords.map((record) => ({
+            startValue: record.StationingStart.OriginalValue,
+            endValue: record.StationingEnd.OriginalValue,
+            color: "#6d0077",
+            opacity: 0.1,
+            showOnTop: false,
+          })),
+        ],
       },
     };
     const continuousChartWithLocalizationLabels = {
